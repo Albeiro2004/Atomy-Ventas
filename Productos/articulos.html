@@ -62,112 +62,493 @@
 
     <!-- Productos -->
     <section class="container my-5">
-        
+
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="productosContainer">
-            <!-- Aquí se cargarán los productos con JS -->
-             <script>
-                    
-                //listar los Productos
-            const container = document.getElementById('productosContainer');
-        
-            fetch('./api_productos.php')
-                .then(response => response.json())
-                .then(productos => {
-                    container.innerHTML = ''; // Limpia el contenedor
-        
-                    productos.forEach(producto => {
-                        const col = document.createElement('div');
-                        col.className = 'col';
-        
-                        col.innerHTML = `
-                            <div class="card product-card h-100">
-                                <img src="${producto.imagen}" class="card-img-top product-img" alt="${producto.nombre}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${producto.nombre}</h5>
-                                    <p class="card-text text-success fw-bold">$${parseFloat(producto.precio).toFixed(2)}</p>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <button class="btn btn-primary w-100 detalles-btn"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#productoModal"
-                                        data-name="${producto.nombre}"
-                                        data-price="$${parseFloat(producto.precio).toFixed(2)}"
-                                        data-img="${producto.imagen}">
-                                        Ampliar <i class="fas fa-arrow-right ms-2"></i>
-                                    </button>
-        
-                                    <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                        data-name="${producto.nombre}"
-                                        data-price="${producto.precio}"
-                                        data-img="${producto.imagen}">
-                                        Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-        
-                        container.appendChild(col);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    container.innerHTML = `
-                        <div class="col-12 text-center text-danger">
-                            <i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
-                            <h3>Error al cargar productos</h3>
-                            <p>${error.message}</p>
-                        </div>
-                    `;
-                });
 
-             </script>
-        </div>
-
-        <!--<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="productosContainer">
-            <?php
-            include 'conexion/conexion.php'; // tu archivo de conexión a MySQL
-
-            $sql = "SELECT * FROM productos";
-            $resultado = $conexion->query($sql);
-
-            while ($producto = $resultado->fetch_assoc()) {
-            ?>
                 <div class="col">
                     <div class="card product-card h-100">
-                        <img src="<?= $producto['imagen'] ?>" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <?= $producto['nombre'] ?>
+                                Atomy Absolute CellActive Skincare Set
                             </h5>
                             <p class="card-text text-success fw-bold">$
-                                <?= number_format($producto['precio'], 2) ?>
+                                120.00
                             </p>
                         </div>
                         <div class="card-footer bg-transparent">
                             <button class="btn btn-primary w-100 detalles-btn"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
-                                data-name="<?= $producto['nombre'] ?>"
-                                data-price="$<?= number_format($producto['precio'], 2) ?>"
-                                data-img="<?= $producto['imagen'] ?>">
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                data-name="<?= $producto['nombre'] ?>"
-                                data-price="$<?= $producto['precio'] ?>"
-                                data-img="<?= $producto['imagen'] ?>">
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="card product-card h-100">
+                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Atomy Absolute CellActive Skincare Set
+                            </h5>
+                            <p class="card-text text-success fw-bold">$
+                                120.00
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100 detalles-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
+                                Ampliar <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+
+                            <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
+                                data-name="Atomy Absolute CellActive Skincare Set"
+                                data-price="$120.00"
+                                data-img="images/atomy1.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
 
                     </div>
                 </div>
-            <?php
-            }
-            ?>
+            
 
-        </div>-->
+        </div>
 
         <!-- Botones Ver Más/Ver Menos -->
         <div class="text-center mt-4">
