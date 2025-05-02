@@ -1,49 +1,5 @@
 
         document.addEventListener('DOMContentLoaded', function() {
-
-            //listar los Productos
-            const container = document.getElementById('productosContainer');
-        
-            fetch('../api_productos.php')
-                .then(response => response.json())
-                .then(productos => {
-                    container.innerHTML = ''; // Limpia el contenedor
-        
-                    productos.forEach(producto => {
-                        const col = document.createElement('div');
-                        col.className = 'col';
-        
-                        col.innerHTML = `
-                            <div class="card product-card h-100">
-                                <img src="${producto.imagen}" class="card-img-top product-img" alt="${producto.nombre}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${producto.nombre}</h5>
-                                    <p class="card-text text-success fw-bold">$${parseFloat(producto.precio).toFixed(2)}</p>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <button class="btn btn-primary w-100 detalles-btn"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#productoModal"
-                                        data-name="${producto.nombre}"
-                                        data-price="$${parseFloat(producto.precio).toFixed(2)}"
-                                        data-img="${producto.imagen}">
-                                        Ampliar <i class="fas fa-arrow-right ms-2"></i>
-                                    </button>
-        
-                                    <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                        data-name="${producto.nombre}"
-                                        data-price="${producto.precio}"
-                                        data-img="${producto.imagen}">
-                                        Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-        
-                        container.appendChild(col);
-                    });
-                })
-                .catch(error => console.error('Error al cargar productos:', error));
         
             // Configurar modal con datos del producto
             const productoModal = document.getElementById('productoModal');
