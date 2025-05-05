@@ -19,7 +19,30 @@
 
     .navbar-nav {
         text-align: right;
+        justify-content: right;
     }
+
+    /* BOTÓN VOLVER ARRIBA */
+    #btnInicio {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #1e3c72;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s;
+        display: none;
+        z-index: 9999;
+    }
+  
+  #btnInicio:hover {
+    background: #2b2b2b;
+    color: #fdfdfd;
+  }
 
     .collapse ul li a {
         font-style: normal;
@@ -33,7 +56,7 @@
     }
 
     .btn.btn-outline-dark{
-        margin: auto;
+        justify-content: right;
     }
 
     .search-bar {
@@ -73,18 +96,33 @@
 
     @media (max-width: 768px) {
 
-        .navbar-nav {
-            width: 100%;
+        .container{
+            justify-content: right;
+        }
+        .navbar-brand {
+            margin-left: 30px !important;
+        }
+
+        .navbar-toggler{
+            margin-left: 20% !important;
+            background-color: #42738f91 !important;  
+           
         }
 
         .btn.btn-outline-dark{
-            width: 50%;
-            margin: auto;
-            margin-bottom: -1%;
+            margin-right: 2%;
         }
 
-        .navbar-brand {
-            margin-left: 20px;
+        /* Ajustar el botón de volver al inicio */
+        #btnInicio {
+            font-size: 14px;
+            padding: 10px;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .collapse ul{
+            margin-bottom: 10px;
         }
 
         .collapse ul li a {
@@ -92,6 +130,7 @@
             background-color: #e9e9e925;
             box-shadow: #333 0 0 2px;
             border-radius: 5px;
+            margin-bottom: 5px;
         }
 
         .search-bar {
