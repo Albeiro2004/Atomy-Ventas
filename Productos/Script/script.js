@@ -31,7 +31,7 @@
 
             if(productosContainer && verMasBtn && verMenosBtn){
               const allProducts = Array.from(productosContainer.querySelectorAll('.col'));
-              const batchSize = 8;
+              const batchSize = 12;
               let visibleCount = batchSize;
               let filteredProducts = [...allProducts];
             

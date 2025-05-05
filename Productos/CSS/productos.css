@@ -1,285 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Special+Gothic+Expanded+One&display=swap');
 
-body {
-    font-family: 'Poppins',serif;
-    background: #8e9eab;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
- 
-.topnav{
-    background-color: #333;
-    overflow: hidden;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 7vh;
-    box-shadow: #007bff 0px 0px 10px;
-}
-
-.topnav a{
-    font-family: 'Poppins', serif;
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 1% 1%;
-    text-decoration: none;
-    font-size: 17px;
-    flex: 1;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.topnav a:hover{
-    background-color: #ddd;
-    color: black;
-
-}
-
-.topnav a.active{
-    background-color: #dfdfdf;
-}
-
-.topnav a img{
-    width: 20%;
-    height: 10vh;
-    margin-top: 2%;
-}
-
-header {
-    padding: 3%;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    display: flex; /* Activar flexbox */
-    flex-direction: column; /* Apilar elementos verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    justify-content: center; /* Centrar verticalmente */
-    margin-bottom: 2%;
-    height: 15vh; 
-}
-
-header img {
-    width: 65%;
-    height: 15vh; /* Espacio entre la imagen y el campo de búsqueda */
-}
-
-#searchBar {
-    background-color: lavender;
-    width: 20%;
-    padding: 0.75%;
-    margin-top: -1%;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.7rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1%;
-}
-
-#searchBar::placeholder {
-    color: #888;
-}
-
-.productos-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0 2%;
-    padding: 20px;
-    justify-content: center;
-}
-
-.producto {
-    background: #ADA996;
-    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 8%;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    transition: transform 0.3s ease-in-out;
-    font-size: 18px;
-    font-weight: bold;
-    height: 80%;
-}
-
-.producto:hover {
-    transform: scale(1.05);
-}
-
-.producto img {
-    width: 100%;
-    height: 50%;
-    border-radius: 10%;
-}
-
-.producto h2 {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-}
-
-.producto p {
-    font-size: 14px;
-    color: #666;
-}
-
-.producto button {
-    background: rgb(26, 143, 131);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.producto button:hover {
-    background: #6aaff8;
-}
-
-/* Estilos para el modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de todo */
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    text-align: center;
-    position: relative;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-#modal-image {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-#modal-title {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-#modal-price {
-    font-size: 20px;
-    color: #28a745;
-    font-weight: bold;
-}
-
-#modal-description {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Estilos para los botones */
-.botones-container {
-    text-align: center;
-}
-
-#verMasBtn, #verMenosBtn {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#verMasBtn:hover, #verMenosBtn:hover {
-    background: #0056b3;
-}
-
-/* Media Queries para móviles */
-@media (max-width: 768px) {
-
-    .topnav a img{
-        width: 15%;
-        height: 5vh;
+    body {
+        font-family: "Special Gothic Condensed One", sans-serif;
+        background: #A1FFCE;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #FAFFD1, #A1FFCE);
     }
 
-    .topnav{
-        background-color: #3299b0;
-        height: 10%;
-        flex-direction: column; /* Apila los elementos en columna */
+    .navbar {
+        background-color: #a7e1f7;
+        border-radius: 0 0 5px 5px;
+        box-shadow: #333 0 0 10px;
     }
 
-    .topnav a{
-        font-size: 10px;
+    .navbar-brand {
+        margin-left: -40px;
     }
 
-    .productos-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2% 3%;
+    .navbar-nav {
+        text-align: right;
+    }
+
+    .collapse ul li a {
+        font-style: normal;
+        color: #0d6efd;
+        font-size: 18px;
+    }
+
+    .nav-link.active {
+        color: rgb(0, 0, 0) !important;
+        /* el !important ayuda a sobreescribir estilos de Bootstrap */
+    }
+
+    .btn.btn-outline-dark{
+        margin: auto;
+    }
+
+    .search-bar {
+        max-width: 500px;
+        margin: 20px auto;
+        margin-top: -15px;
+    }
+
+    .product-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 20px;
         height: 100%;
     }
 
-    .producto {
-        text-align: center;
-        transition: transform 0.3s ease-in-out;
-        font-size: 12px;
-        font-weight: bold;
-        height: 100%;
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .producto p, .producto h2 {
-        margin-top: -2%;
-        font-size: 10px;
+    .product-img {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
     }
 
-    .producto button {
-        font-size: 10px;
-        padding: 3px;
-        margin-bottom: 25%;
-
+    .load-more {
+        margin: 30px auto;
+        display: block;
     }
 
-    header img {
-        margin-top: 3%;
-        width: 80%;
+    .modal-product-img {
+        max-height: 300px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
     }
 
-    #searchBar{
-        width: 50%;
-        margin-bottom: 10%;
-        margin-top: -5%;
-    }
+    @media (max-width: 768px) {
 
-    .botones-container {
-        margin-top: 50%;/* Ajusta el espacio con respecto al elemento anterior */
-    }
+        .navbar-nav {
+            width: 100%;
+        }
 
-    #verMasBtn, #verMenosBtn {
-        font-size: 10px;
-        padding: 2.5%;
-    }
+        .btn.btn-outline-dark{
+            width: 50%;
+            margin: auto;
+            margin-bottom: -1%;
+        }
 
-    #verMenosBtn {
-        margin-top: 50%;
-    }
-    .producto:hover {
-        transform: none;
-    }
+        .navbar-brand {
+            margin-left: 20px;
+        }
 
-}
+        .collapse ul li a {
+            text-align: center;
+            background-color: #e9e9e925;
+            box-shadow: #333 0 0 2px;
+            border-radius: 5px;
+        }
+
+        .search-bar {
+            max-width: 80%;
+            margin-top: -5px;    
+        }
+
+        .product-card {
+            width: 90%;
+            margin: 0 auto;
+            border-radius: 0 0 15px 15px ;
+            padding-bottom: 2%;
+        }
+    }
