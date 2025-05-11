@@ -1,5 +1,4 @@
 function loadContent(url, cssPath = null) {
-  // Cargar CSS si no se ha cargado aún
   if (cssPath) {
     const existingLink = document.querySelector(`link[href="${cssPath}"]`);
     if (!existingLink) {
@@ -18,25 +17,24 @@ function loadContent(url, cssPath = null) {
       const newContent = doc.querySelector("main").innerHTML;
       document.querySelector("main").innerHTML = newContent;
 
-      // Invocar funciones específicas si se carga articulos.html
-      if (url.includes("articulos")) {
-        if (typeof inicializarArticulos === "function") {
-          inicializarArticulos(); // Ejecuta tu lógica personalizada
-        }
-      }
-
-      // Reiniciar scripts internos si hay
-      document.querySelectorAll("main script").forEach((script) => {
+      // 🧠 Volver a cargar scripts (externos e inline)
+      const scripts = doc.querySelectorAll("script");
+      scripts.forEach((oldScript) => {
         const newScript = document.createElement("script");
-        newScript.textContent = script.textContent;
-        script.replaceWith(newScript);
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+        document.body.appendChild(newScript);
       });
 
-      setupInternalLinks();
+      setupInternalLinks(); // si tienes manejo de enlaces internos
       history.pushState({}, "", url);
     })
     .catch((err) => console.error("Error al cargar:", err));
 }
+
 
 function setupInternalLinks() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
