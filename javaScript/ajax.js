@@ -17,24 +17,28 @@ function loadContent(url, cssPath = null) {
       const newContent = doc.querySelector("main").innerHTML;
       document.querySelector("main").innerHTML = newContent;
 
-      // 🧠 Volver a cargar scripts (externos e inline)
+      // Reinsertar scripts (inline y externos)
       const scripts = doc.querySelectorAll("script");
       scripts.forEach((oldScript) => {
         const newScript = document.createElement("script");
         if (oldScript.src) {
           newScript.src = oldScript.src;
+          newScript.onload = () => {
+            if (url.includes("articulos.html") && typeof inicializarArticulos === "function") {
+              inicializarArticulos(); // ⚡ Ejecutar función cuando cargue el script
+            }
+          };
         } else {
           newScript.textContent = oldScript.textContent;
         }
         document.body.appendChild(newScript);
       });
 
-      setupInternalLinks(); // si tienes manejo de enlaces internos
+      setupInternalLinks();
       history.pushState({}, "", url);
     })
     .catch((err) => console.error("Error al cargar:", err));
 }
-
 
 function setupInternalLinks() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
