@@ -38,7 +38,7 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #1e3c72;
+  background: #0d6dfdab;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -87,12 +87,50 @@ h2{
     border-radius: 2px;
   }
   
+  .tituloVideo {
+    color: #0d6efd; /* Un azul elegante */
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+  }
+  
+  .tituloVideo::after {
+    content: "";
+    display: block;
+    width: 15vw;
+    height: 3px;
+    background-color: #0d6efd; 
+    margin: 5px auto 0;
+    border-radius: 2px;
+  }
+
+    
+  .tituloSuscrip {
+    color: #0d6efd; /* Un azul elegante */
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+  }
+  
+  .tituloSuscrip::after {
+    content: "";
+    display: block;
+    width: 32vw;
+    height: 3px;
+    background-color: #0d6efd; 
+    margin: 5px auto 0;
+    border-radius: 2px;
+  }
 
 /* Cards */
 .card {
     padding: 10px;
     transition: transform 0.3s;
-    max-height: 80vh;
+    max-height: 70vh;
     border-radius: 20px;
     background-color: #a7e0f759;
 }
@@ -112,6 +150,10 @@ h2{
 
 .col-md-8 p{
   color: #808080;
+}
+
+.suscribete {
+  background-color: #d8d8d86e;
 }
 
 /* Footer */
@@ -170,16 +212,28 @@ footer a:hover {
     }
 
     .card {
-      max-height: 45vh;
+      margin: 0 auto;
     }
 
-    .titulo{
-      font-size: 25px;
+    .titulo, .tituloVideo, .tituloSuscrip{
+      font-size: 22px;
     }
     .titulo::after {
-      width: 45vw;
+      width: 47vw;
     }
 
+    .tituloVideo::after {
+      width: 30vw;
+    }
+
+    .tituloSuscrip::after {
+      width: 75vw;
+    }
+
+    .lead {
+      font-size: 16px;
+    }
+    
     section input {
       text-align: left;
     }
