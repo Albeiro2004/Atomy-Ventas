@@ -1,0 +1,51 @@
+/* Estilos para el contenedor principal */
+.nosotros {
+    padding: 3rem;
+}
+
+/* Estilos para los párrafos */
+.col-md-6 p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #495057;
+}
+
+/* Estilos para la lista de valores */
+.list-group {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item {
+    padding: 1rem 1.25rem;
+    border-color: rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f1f8ff;
+    transform: translateX(5px);
+}
+
+.text-primary {
+    color: #0d6efd;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container.mb-5 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .col-md-6:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
