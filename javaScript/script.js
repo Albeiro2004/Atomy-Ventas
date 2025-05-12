@@ -15,6 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
+  // Cierra automáticamente el navbar al hacer clic en un enlace con data-bs-auto-close
+  document.querySelectorAll('[data-bs-auto-close="true"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      const navbarCollapse = document.getElementById("navbarSupportedContent");
+      const bsCollapse =
+        bootstrap.Collapse.getInstance(navbarCollapse) ||
+        new bootstrap.Collapse(navbarCollapse);
+      bsCollapse.hide();
+    });
+  });
+
   // Mostrar el botón cuando el usuario baja
   window.addEventListener("scroll", function () {
     if (window.scrollY > 150) {
@@ -28,6 +39,5 @@ document.addEventListener('DOMContentLoaded', function() {
   btnInicio.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
 });
 

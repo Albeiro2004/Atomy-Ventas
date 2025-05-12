@@ -18,7 +18,10 @@ function loadContent(url, cssPath = null) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
       const newContent = doc.querySelector("main").innerHTML;
-      document.querySelector("main").innerHTML = newContent;
+
+    
+
+      document.querySelector("main").innerHTML = newContent; 
 
       // Volver a insertar scripts
       const scripts = doc.querySelectorAll("script");
