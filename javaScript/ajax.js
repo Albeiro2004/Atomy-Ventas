@@ -17,11 +17,11 @@ function loadContent(url, cssPath = null) {
     .then((html) => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
-      const newContent = doc.querySelector("main").innerHTML;
-
-    
+      const newContent = doc.querySelector("main").innerHTML;  
 
       document.querySelector("main").innerHTML = newContent; 
+
+      $('#navbarSupportedContent').collapse('hide'); // Cierra el menú
 
       // Volver a insertar scripts
       const scripts = doc.querySelectorAll("script");
