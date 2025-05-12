@@ -8,17 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  // Manejar el envío del formulario de newsletter
-  const newsletterForm = document.querySelector(".newsletter form");
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      alert(`Gracias por suscribirte con el correo: ${email}`);
-      this.reset();
-    });
-  }
-
   const btnInicio = document.getElementById("btnInicio");
 
   if (!btnInicio) {

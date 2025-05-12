@@ -132,6 +132,8 @@ function inicializarArticulos() {
       actualizarCarrito();
       const modal = bootstrap.Modal.getInstance(document.getElementById('carritoModal'));
       modal.hide();
+      location.reload();
+      
     }
   });
 }
