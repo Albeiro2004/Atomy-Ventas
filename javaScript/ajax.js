@@ -26,6 +26,11 @@ function loadContent(url, cssPath = null) {
         const newScript = document.createElement("script");
         if (oldScript.src) {
           newScript.src = oldScript.src;
+          newScript.onload = () => {
+            if (url.includes("articulos.html") && typeof inicializarArticulos === "function") {
+              inicializarArticulos(); // ⚡ Ejecutar función cuando cargue el script
+            }
+          };
         } else {
           newScript.textContent = oldScript.textContent;
         }
@@ -36,7 +41,6 @@ function loadContent(url, cssPath = null) {
     })
     .catch((err) => {
       console.error("Error al cargar:", err);
-      loadContent("404.html"); // cargar tu página 404 si falla
     });
 }
 
