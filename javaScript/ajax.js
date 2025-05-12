@@ -1,3 +1,4 @@
+
 function loadContent(url, cssPath = null) {
   if (cssPath) {
     const existingLink = document.querySelector(`link[href="${cssPath}"]`);
@@ -62,13 +63,10 @@ document.querySelectorAll('#menu-nav a:not([target="_blank"])').forEach((link) =
 });
 
 window.addEventListener("popstate", () => {
-  if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html")) {
-    const initialContent = "<div>Contenido de Inicio</div>"; // o contenido real
-    document.querySelector("main").innerHTML = initialContent;
-  } else {
-    loadContent(window.location.pathname);
-  }
+  // Redirige siempre a index.html
+  window.location.href = "/index.html";
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   setupInternalLinks();
