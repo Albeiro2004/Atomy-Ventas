@@ -15,22 +15,24 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
- // Cierra automáticamente el navbar al hacer clic en un enlace con data-bs-auto-close
-// Solo en dispositivos móviles y tablets (viewport width < 992px)
-document.querySelectorAll('[data-bs-auto-close="true"]').forEach((link) => {
-  link.addEventListener("click", () => {
-    // Verificar si el viewport es menor que 992px (breakpoint lg de Bootstrap)
-    if (window.innerWidth < 992) {
-      const navbarCollapse = document.getElementById("navbarSupportedContent");
-      if (navbarCollapse) {
-        const bsCollapse =
-          bootstrap.Collapse.getInstance(navbarCollapse) ||
-          new bootstrap.Collapse(navbarCollapse);
-        bsCollapse.hide();
+  // Cierra automáticamente el navbar al hacer clic en un enlace con data-bs-auto-close
+  // Solo en dispositivos móviles y tablets (viewport width < 992px)
+  document.querySelectorAll('[data-bs-auto-close="true"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      // Verificar si el viewport es menor que 992px (breakpoint lg de Bootstrap)
+      if (window.innerWidth < 992) {
+        const navbarCollapse = document.getElementById(
+          "navbarSupportedContent"
+        );
+        if (navbarCollapse) {
+          const bsCollapse =
+            bootstrap.Collapse.getInstance(navbarCollapse) ||
+            new bootstrap.Collapse(navbarCollapse);
+          bsCollapse.hide();
+        }
       }
-    }
+    });
   });
-});
 
   // Mostrar el botón cuando el usuario baja
   window.addEventListener("scroll", function () {
