@@ -21,8 +21,6 @@ function loadContent(url, cssPath = null) {
 
       document.querySelector("main").innerHTML = newContent; 
 
-      $('#navbarSupportedContent').collapse('hide'); // Cierra el menú
-
       // Volver a insertar scripts
       const scripts = doc.querySelectorAll("script");
       scripts.forEach((oldScript) => {
