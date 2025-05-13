@@ -21,6 +21,10 @@ function loadContent(url, cssPath = null) {
 
       document.querySelector("main").innerHTML = newContent; 
 
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // Efecto suave (opcional)
+      });
       // Volver a insertar scripts
       const scripts = doc.querySelectorAll("script");
       scripts.forEach((oldScript) => {
