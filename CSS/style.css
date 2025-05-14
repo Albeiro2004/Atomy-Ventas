@@ -186,7 +186,7 @@ footer a:hover {
     border: none;
     border-radius: 50%;
     font-size: 22px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
