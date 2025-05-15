@@ -36,8 +36,13 @@ body {
     color: rgb(0, 0, 0) !important; /* el !important ayuda a sobreescribir estilos de Bootstrap */
   }
 
-  
 /* Carousel */
+
+#portadaCarousel{
+    border-radius: 0 0 5px 5px; /* Solo abajo */
+    box-shadow: #333 0 0 10px;
+}
+
 .carousel-item {
     max-height: 420px;
 }
@@ -45,6 +50,7 @@ body {
 .carousel-item img {
     object-fit: cover;
     height: 420px;
+    border-radius: 0 0 5px 5px;
 }
 
 h2{
@@ -137,6 +143,13 @@ h2{
   background-color: #d8d8d86e;
 }
 
+.descarga{
+  font-size: 20px;
+}
+
+.descarga:hover{
+  background-color: #25D366;
+}
 /* Footer */
 footer a {
     text-decoration: none;
