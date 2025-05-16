@@ -32,6 +32,10 @@ body {
     font-size: 18px;
   }
 
+  .collapse ul li a:hover{
+    color: #201f1f;
+  }
+
   /* From Uiverse.io by gharsh11032000 */ 
 .button {
   cursor: pointer;
@@ -186,10 +190,12 @@ h2{
 
 .descarga{
   font-size: 20px;
+  background-color: rgb(250, 135, 114);
+  border: #201f1f 1px solid;
 }
 
 .descarga:hover{
-  background-color: #25D366;
+  background-color: tomato;
 }
 /* Footer */
 footer a {
@@ -325,6 +331,11 @@ footer a:hover {
       width: 90vw;
     }
 
+
+    .vi{
+      width: 100%;
+      height: 100%;
+    }
     .lead {
       font-size: 16px;
     }
