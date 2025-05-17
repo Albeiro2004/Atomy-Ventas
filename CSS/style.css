@@ -188,15 +188,121 @@ h2{
   background-color: #d8d8d86e;
 }
 
-.descarga{
-  font-size: 20px;
-  background-color: rgb(250, 135, 114);
-  border: #201f1f 1px solid;
+/* From Uiverse.io by satyamchaudharydev */ 
+.buttonDes {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #1163ff;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  transition: background 0.3s;
+  display: flex;
+  justify-content: center;
 }
 
-.descarga:hover{
-  background-color: tomato;
+.buttonDes::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
 }
+
+.buttonDes::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.buttonDes::after,.buttonDes::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  margin-left: 25px;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.buttonDes:hover {
+  background: #6c18ff;
+  
+}
+
+.buttonDes:hover .text {
+  top: -100%;
+}
+
+.buttonDes:hover .icon {
+  top: 0;
+}
+
+.buttonDes:hover:before,.buttonDes:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.buttonDes:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.buttonDes:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
 /* Footer */
 footer a {
     text-decoration: none;
@@ -314,6 +420,7 @@ footer a:hover {
 
     .card {
       margin: 0 auto;
+      max-height: 60vh;
     }
 
     .titulo, .tituloVideo, .tituloSuscrip{
@@ -328,13 +435,17 @@ footer a:hover {
     }
 
     .tituloSuscrip::after {
-      width: 90vw;
+      width: 85vw;
     }
 
+    .col-auto{
+      width: 90%;
+      height: 100%;
+    }
 
     .vi{
       width: 100%;
-      height: 100%;
+      height: 100%;   
     }
     .lead {
       font-size: 16px;
