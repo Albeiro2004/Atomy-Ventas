@@ -181,16 +181,18 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .containerPago {
-  width: 100% !important;
-  padding: 0%;
+  .containerPago {
+  display: none;
 }
 .containerPagoNequi {
-  width: 100% !important;
   padding: 0%;
 }
 .containerPagoDaviplata {
-  width: 100% !important;
   padding: 0%;
 }
+
+.pieH5{
+  font-size: 26px;
+}
+
 }
