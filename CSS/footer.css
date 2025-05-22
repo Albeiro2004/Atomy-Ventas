@@ -74,15 +74,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
-  max-width: 70%;
+  padding: 10px;
+  width: 100%;
 }
 
 .nequi-card {
   background: #ffffffe1;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   border: 2px solid #8e2de2;
   transition: transform 0.3s ease;
@@ -140,7 +140,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  max-width: 70%;
+  width: 100%;
 }
 
 .daviplata-card {
@@ -166,6 +166,7 @@
 
 .daviplata-logo {
   width: 120px;
+  height: 50px;
 }
 
 .daviplata-number {
@@ -186,9 +187,20 @@
 }
 .containerPagoNequi {
   padding: 0%;
+  width: 100%;
 }
+
+.nequi-card , .daviplata-card{
+  padding: 0%;
+  width: 80%;
+}
+
 .containerPagoDaviplata {
   padding: 0%;
+}
+.qr-code {
+  width: 80px;
+  height: 80px;
 }
 
 .pieH5{

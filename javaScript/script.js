@@ -47,5 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
   btnInicio.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            // Eliminar 'active' de todos los enlaces
+            navLinks.forEach(l => l.classList.remove('active'));
+
+            // Agregar 'active' solo al enlace clicado
+            this.classList.add('active');
+        });
+    });
+    
 });
 
