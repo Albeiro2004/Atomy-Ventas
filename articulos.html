@@ -50,30 +50,29 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="productosContainer">
 
                 <div class="col">
-                    <div class="card product-card h-100">
-                        <img src="images/atomy1.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                    <div class="card product-card h-100 overflow-hidden">
+                        <img src="images/atomy15.jpg" class="card-img-top product-img" alt="Imagen del Producto">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Atomy Absolute CellActive Skincare Set
+                                Pasta Dental 200g (x1)
                             </h5>
-                            <p class="card-text text-success fw-bold">$
-                                120.00
-                            </p>
+                            <p class="card-text text-success fw-bold">$ 27,000</p>                           
                         </div>
                         <div class="card-footer bg-transparent">
                             <button class="btn btn-primary w-100 detalles-btn"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Pasta Dental 200g (x1)"
+                                data-price="$ 27,000"
+                                data-img="images/atomy15.jpg"
+                                data-text="Contine efectos antiplaca, antibacterial y antiinflamatorio">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Pasta Dental 200g (x1)"
+                                data-price="$ 27,000"
+                                data-img="images/atomy15.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
@@ -98,14 +97,14 @@
                                 data-bs-target="#productoModal"
                                 data-name="Atomy Absolute CellActive Skincare Set"
                                 data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-img="images/atomy2.jpg">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
                                 data-name="Atomy Absolute CellActive Skincare Set"
                                 data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-img="images/atomy2.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
@@ -715,11 +714,11 @@
                     <img id="modal-image" src="" class="modal-product-img img-fluid mb-3" alt="Imagen del producto">
                     <h4 id="modal-title" class="mb-2"></h4>
                     <h5 id="modal-price" class="text-success mb-3"></h5>
-                    <p id="modal-description" class="text-muted">Producto Garantizado</p>
+                    <p id="modal-description" class="text-muted"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">
+                    <button id="modal-add-cart" type="button" class="btn btn-primary">
                         <i class="fas fa-shopping-cart me-2"></i>Añadir al carrito
                     </button>
                 </div>
