@@ -1,13 +1,4 @@
-function loadContent(url, cssPath = null) {
-  if (cssPath) {
-    const existingLink = document.querySelector(`link[href="${cssPath}"]`);
-    if (!existingLink) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = cssPath;
-      document.head.appendChild(link);
-    }
-  }
+function loadContent(url) {
 
   fetch(url)
     .then((response) => {
@@ -25,23 +16,8 @@ function loadContent(url, cssPath = null) {
         top: 0,
         behavior: "smooth", // Efecto suave (opcional)
       });
-      // Volver a insertar scripts
-      const scripts = doc.querySelectorAll("script");
-      scripts.forEach((oldScript) => {
-        const newScript = document.createElement("script");
-        if (oldScript.src) {
-          newScript.src = oldScript.src;
-          newScript.onload = () => {
-            if (url.includes("articulos.html") && typeof inicializarArticulos === "function") {
-              inicializarArticulos(); // ⚡ Ejecutar función cuando cargue el script
-            }
-          };
-        } else {
-          newScript.textContent = oldScript.textContent;
-        }
-        document.body.appendChild(newScript);
-      });
-
+      
+      inicializarArticulos(); // Inicializar los artículos después de cargar el nuevo contenido
       setupInternalLinks(); // Volver a activar los enlaces internos
     })
     .catch((err) => {
@@ -52,19 +28,17 @@ function loadContent(url, cssPath = null) {
 // Cargar el contenido basado en hash actual
 function loadFromHash() {
   const hash = location.hash ? location.hash.substring(1) : "index.html"; // por defecto
-  const css = document.querySelector(`a[href="#${hash}"]`)?.getAttribute("data-css") || null;
-  loadContent(hash, css);
+  loadContent(hash);
 }
 
-// Enlaces tipo <a href="#contacto.html" data-css="css/contacto.css">
+// Enlaces tipo <a href="#contacto.html"
 function setupInternalLinks() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const target = link.getAttribute("href").substring(1);
-      const css = link.getAttribute("data-css");
       location.hash = `#${target}`; // Cambiar el hash (dispara hashchange)
-      loadContent(target, css);
+      loadContent(target);
     });
   });
 }

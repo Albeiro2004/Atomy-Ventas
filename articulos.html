@@ -15,8 +15,8 @@
 
     <!-- Header -->
     <header class="text-center my-4">
-        <div class="container d-flex justify-content-center align-items-center flex-column">
-           
+        <div class="container d-flex justify-content-center align-items-center flex-column">       
+            
             <picture>
                 <!-- Imagen para pantallas pequeñas (ej. móviles) -->
                 <source class="imgMedia" media="(max-width: 768px)" srcset="images\cooltext482935093340918.png">
@@ -45,7 +45,7 @@
 
     <!-- Productos -->
     <section class="container my-5">
-
+        
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="productosContainer">
 
                 <div class="col">
@@ -699,6 +699,27 @@
                 <i class="fas fa-minus-circle me-2"></i>Ver menos
             </button>
         </div>
+        
+        <section class="mt-4">
+            <h2 class="tituloVideo text-center mb-4">Recomendado</h2>
+        <div class="video">
+        <div class="row-cols-1 d-flex justify-content-center gap-4 ">
+            <div class="col-auto">
+                <iframe class="vi rounded-5 bg-light" width="560" height="315" src="https://www.youtube.com/embed/_m-uS8rCUyo?si=-VH2DsY4kQKsNMkc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="col-auto">
+                <iframe class="vi rounded-5 bg-light" width="560" height="315" src="https://www.youtube.com/embed/yYrlyXY5o_w?si=GObm2fNayq68QO8c"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        </div>
+        </section>
+    
     </section>
 
     <!-- Modal Bootstrap -->
@@ -748,8 +769,6 @@
     </div>
     </main>  
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

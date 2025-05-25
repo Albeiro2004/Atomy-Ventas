@@ -49,7 +49,6 @@
   border-radius: 50%;
 }
 
-
   .group {
   display: flex;
   line-height: 28px;
@@ -123,12 +122,6 @@
             justify-content: right;
         }
 
-        .navbar-toggler{
-            margin-left: 20% !important;
-            background-color: #42738f91 !important;  
-           
-        }
-
         .group {
             max-width: 70%;
             margin: 0 auto;
@@ -153,6 +146,13 @@
 
         .btn.btn-primary{
             margin-top: 10px;
+        }
+
+        .row-cols-1.d-flex.justify-content-center{
+          background-color: azure;
+          flex-wrap: wrap;
+          margin: 0 auto;   
+          gap: 0px;
         }
 
     }
