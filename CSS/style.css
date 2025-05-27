@@ -75,15 +75,15 @@ body {
 
 /* Carousel */
 
-#portadaCarousel{
+.carouselPrincipal{
     border-radius: 0 0 5px 5px; /* Solo abajo */
     box-shadow: #333 0 0 10px;
 }
 
-.carousel-item img {
+.carouselPrincipal .carousel-item img {
     object-fit: cover;
     border-radius: 0 0 5px 5px;
-    height: 55vh;
+    height: 100%;
 }
 
 h2{
@@ -395,11 +395,7 @@ footer a:hover {
   max-height: 50px;
 }
 
-  .carousel-item {
-    max-height: 300px;
-}
-
-.carousel-item img {
+.carouselPrincipal .carousel-item img {
     object-fit: cover;
     height: 300px;
 }

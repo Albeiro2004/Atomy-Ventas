@@ -207,6 +207,56 @@ if (botonModal) {
       location.reload();      
     }
   });
+
+
+  
+const tipoFiltro = document.getElementById('tipoFiltro');
+const campoFiltro = document.getElementById('searchBar');
+
+tipoFiltro.addEventListener('change', () => {
+  const seleccion = tipoFiltro.value;
+  campoFiltro.value = '';
+  campoFiltro.style.dysplay = seleccion ? 'block' : 'none';
+
+  if (seleccion === 'nombre') {
+    campoFiltro.type = 'text';
+    campoFiltro.placeholder = 'Buscar por nombre...';
+  } else if (seleccion === 'precioMin' || seleccion === 'precioMax') {
+     campoFiltro.type = 'number';
+     campoFiltro.placeholder = seleccion === 'precioMin' ? 'Precio mínimo...' : 'Precio máximo...'; 
+  } else {
+    campoFiltro.placeholder = 'Seleccione un filtro';
+  } 
+
+  filtrarTarjetas();
+});
+
+campoFiltro.addEventListener('input', filtrarTarjetas);
+
+function filtrarTarjetas() {
+  const seleccion = tipoFiltro.value;
+  const valor = campoFiltro.value.toLowerCase();
+  const tarjetas = document.querySelectorAll('.product-card');
+
+  tarjetas.forEach(tarjeta => {
+    const nombre = tarjeta.querySelector('.card-title').textContent.toLowerCase();
+    const precioTexto = tarjeta.querySelector('.card-text').textContent.replace(/[^0-9.]/g, '');  
+    const precio = parseFloat(precioTexto);
+    let mostrar = true;
+
+    if(seleccion === 'nombre') {
+      mostrar = nombre.includes(valor);
+    }else if (seleccion === 'precioMin') {
+      const min = parseFloat(valor) || 0; 
+      mostrar = precio >= min;
+    } else if (seleccion === 'precioMax') {
+      const max = parseFloat(valor) || Infinity; 
+      mostrar = precio <= max;
+    }
+
+    tarjeta.closest('.col').style.display = mostrar ? '' : 'none';
+  });
+}
 }
 
 function cerrarModalProducto() {

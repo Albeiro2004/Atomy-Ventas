@@ -1,3 +1,12 @@
+.carouselArtic {
+  box-shadow: 0 0 20px rgba(55, 111, 231, 0.5);
+}
+
+.carouselArtic .carousel-item img {
+  height: 50vh;
+  object-fit: cover;
+}
+
 #carritoBtn {
   position: fixed;
   top: 70px;
@@ -49,21 +58,20 @@
   border-radius: 50%;
 }
 
-.w-100.rounded-bottom-1{
-  box-shadow: #333 0 0 2px;
+.w-100.rounded-bottom-1 {
+  height: 9vh;
+  box-shadow: 0 0 -10px rgba(55, 111, 231, 0.5);
 }
 
   .group {
   display: flex;
-  line-height: 28px;
   align-items: center;
   position: relative;
   width: 300px;
 }
 
 .input {
-  height: 40px;
-  line-height: 28px;
+  height: 35px;
   padding: 0 1rem;
   width: 100%; 
   padding-left: 2.5rem;
@@ -74,7 +82,12 @@
   color: #0d0c22;
   box-shadow: 0 0 2px #C1D9BF, 0 0 0 4px #f5f5f5eb;
   transition: .3s ease;
-  
+}
+#tipoFiltro {
+    height: 35px;
+    box-shadow: 0 0 2px #C1D9BF, 0 0 0 4px #f5f5f5eb;
+    border: 1px solid rgba(64, 224, 208, 0.582);
+    background-color: #D9E8D8;
 }
 
 .input::placeholder {
@@ -127,13 +140,16 @@
         }
 
         .group {
-            max-width: 70%;
+            max-width: 75%;
             margin: 0 auto;
             margin-bottom: -10px;
+            margin-top: 0px !important;
         }
 
         .input {
           height: 30px;
+          font-size: 14px;
+          border-radius: 10px;
         }
 
         .product-card {
@@ -150,6 +166,36 @@
 
         .btn.btn-primary{
             margin-top: 10px;
+        }
+
+        .w-100.rounded-bottom-1 {
+          width: 100% !important;
+          height: 8vh;
+          margin-bottom: 20px;
+          box-shadow: 0px 0px 10px rgba(55, 111, 231, 0.233);
+        }
+
+        .inputs{
+          margin-top: -10px;
+          gap: 5px;
+        }
+
+        #tipoFiltro {
+          max-width: 60%;
+          height: 30px;
+          margin-bottom: 10px;
+          font-size: 14px;
+          border-radius: 10px;
+        }
+
+        .w-100.rounded-bottom-1 img {
+          margin-top: 7px;
+          width: 60%;
+        }
+
+        .carouselArtic, .carouselArtic .carousel-item img {
+          height: 25vh;
+          margin-bottom: 0px;
         }
 
         .row-cols-1.d-flex.justify-content-center{
