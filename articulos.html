@@ -13,19 +13,45 @@
     
     <main style="position: relative;">
 
+    <div id="portadaCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/imagen7.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/imagen10.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/imagen10.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portadaCarousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portadaCarousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
     <!-- Header -->
-    <header class="text-center my-4">
-        <div class="container d-flex justify-content-center align-items-center flex-column">       
+    <header class="text-center mb-4">
+        <div class=" w-100 d-flex justify-content-center align-items-center flex-column">       
             
-            <picture>
+            <div class="w-100 rounded-bottom-1" style="background: #cad2d4; max-height: 10vh;">
+                <picture>
                 <!-- Imagen para pantallas pequeñas (ej. móviles) -->
                 <source class="imgMedia" media="(max-width: 768px)" srcset="images\cooltext482935093340918.png">
             
                 <!-- Imagen por defecto (para pantallas grandes) -->
-                <img src="https://images.cooltext.com/5726671.png" class="img-fluid mb-3" alt="Catálogo de Productos">
+                <img src="images/cooltext483297628087331.png" class="img-fluid mb-3" alt="Catálogo de Productos">
             </picture>
+            </div>
             
-            <div class="group">
+            <div class="group mt-3">
                 <svg class="icon1" aria-hidden="true" viewBox="0 0 24 24">
                     <g>
                         <path

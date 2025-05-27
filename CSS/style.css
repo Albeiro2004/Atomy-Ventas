@@ -80,14 +80,10 @@ body {
     box-shadow: #333 0 0 10px;
 }
 
-.carousel-item {
-    max-height: 420px;
-}
-
 .carousel-item img {
     object-fit: cover;
-    height: 420px;
     border-radius: 0 0 5px 5px;
+    height: 55vh;
 }
 
 h2{

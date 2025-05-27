@@ -48,17 +48,27 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll(".nav-link");
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            // Eliminar 'active' de todos los enlaces
-            navLinks.forEach(l => l.classList.remove('active'));
-
-            // Agregar 'active' solo al enlace clicado
-            this.classList.add('active');
-        });
+  // verificar si hay un enlace activo almacenado y lo aplica
+  const activeLink = localStorage.getItem("activeNavLink");
+  if (activeLink) {
+    navLinks.forEach((link) => {
+      if (link.href === activeLink) {
+        link.classList.add("active");
+      }
     });
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      navLinks.forEach((l) => l.classList.remove("active"));
+
+      this.classList.add("active");
+
+      localStorage.setItem("activeNavLink", this.href);
+    });
+  });
     
 });
 

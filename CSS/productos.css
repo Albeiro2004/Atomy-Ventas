@@ -49,6 +49,10 @@
   border-radius: 50%;
 }
 
+.w-100.rounded-bottom-1{
+  box-shadow: #333 0 0 2px;
+}
+
   .group {
   display: flex;
   line-height: 28px;
