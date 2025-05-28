@@ -59,8 +59,14 @@
 }
 
 .w-100.rounded-bottom-1 {
-  height: 9vh;
   box-shadow: 0 0 -10px rgba(55, 111, 231, 0.5);
+  padding-bottom: 2%;
+}
+
+.text-center.mb-4 {
+  height: 100%;
+  border-bottom: 2px solid #9ecaf741;
+  box-shadow: 0 4px 6px -4px rgba(149, 215, 241, 0.3);
 }
 
   .group {
@@ -71,7 +77,7 @@
 }
 
 .input {
-  height: 35px;
+  height: 30px;
   padding: 0 1rem;
   width: 100%; 
   padding-left: 2.5rem;
@@ -84,10 +90,11 @@
   transition: .3s ease;
 }
 #tipoFiltro {
-    height: 35px;
+    height: 30px;
     box-shadow: 0 0 2px #C1D9BF, 0 0 0 4px #f5f5f5eb;
     border: 1px solid rgba(64, 224, 208, 0.582);
     background-color: #D9E8D8;
+    font-size: small;
 }
 
 .input::placeholder {
@@ -139,19 +146,6 @@
             justify-content: right;
         }
 
-        .group {
-            max-width: 75%;
-            margin: 0 auto;
-            margin-bottom: -10px;
-            margin-top: 0px !important;
-        }
-
-        .input {
-          height: 30px;
-          font-size: 14px;
-          border-radius: 10px;
-        }
-
         .product-card {
             width: 90%;
             margin: 0 auto;
@@ -169,37 +163,53 @@
         }
 
         .w-100.rounded-bottom-1 {
-          width: 100% !important;
-          height: 8vh;
-          margin-bottom: 20px;
+          height: 100%;
           box-shadow: 0px 0px 10px rgba(55, 111, 231, 0.233);
         }
-
-        .inputs{
-          margin-top: -10px;
-          gap: 5px;
+        
+        .busca {
+          width: 80% !important;
+          margin: 0 auto;
+          margin-top: 8px;
+        }
+        
+        .filtro{
+          width: 25%;
+          margin: 0 auto;
         }
 
         #tipoFiltro {
-          max-width: 60%;
+          margin-bottom: 0;
           height: 30px;
-          margin-bottom: 10px;
           font-size: 14px;
           border-radius: 10px;
+          margin-right: -20px;
+        }
+
+        .group {
+          width: 65%;
+          margin: 0 auto;
+        }
+
+        .input {
+          margin-top: 0;
+          height: 30px;
+          font-size: 14px;
+          border-radius: 10px;
+          
         }
 
         .w-100.rounded-bottom-1 img {
           margin-top: 7px;
-          width: 60%;
+          width: 45%;
         }
 
         .carouselArtic, .carouselArtic .carousel-item img {
-          height: 25vh;
+          height: 30vh;
           margin-bottom: 0px;
         }
 
         .row-cols-1.d-flex.justify-content-center{
-          background-color: azure;
           flex-wrap: wrap;
           margin: 0 auto;   
           gap: 0px;

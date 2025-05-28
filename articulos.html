@@ -39,29 +39,30 @@
 
     <!-- Header -->
     <header class="text-center mb-4">
-        <div class="w-100 d-flex justify-content-center align-items-center flex-column">
     
-            <div class="w-100 rounded-bottom-1" style="background: #cad2d446;">
-                <picture>
+            <div class="w-100 rounded-bottom-1 justify-content-center flex-column" style="background: #cad2d446; min-height: 13vh;">
+                <div>
+                    <picture>
                     <!-- Imagen para pantallas pequeñas (ej. móviles) -->
                     <source class="imgMedia" media="(max-width: 768px)" srcset="images\cooltext482935093340918.png">
     
                     <!-- Imagen por defecto (para pantallas grandes) -->
-                    <img src="images/cooltext483297628087331.png" class="img-fluid mb-3" alt="Catálogo de Productos">
+                    <img src="images/cooltext483297628087331.png" class="img-fluid mb-1" alt="Catálogo de Productos">
                 </picture>
-            </div>
-            <div class="container mt-2 ">
-                    <div class="row d-flex justify-content-center align-items-center inputs">
-                        <div class="col-md-3 d-flex justify-content-center">
+                </div>
+                
+            <div class="container">
+                    <div class="row-cols-auto w-100 d-flex justify-content-center align-items-center g-2 busca">
+                        <div class="col-2 me-3 filtro">
                             <select id="tipoFiltro" class="form-select">
-                                <option value="">Seleccione Filtro</option>
+                                <option value="">Filtro</option>
                                 <option value="nombre">Por nombre</option>
                                 <option value="precioMin">Precio Mínimo</option>
                                 <option value="precioMax">Precio Máximo</option>
                             </select>
                         </div>
     
-                        <div class="group col-md-3">
+                        <div class="group col-6">
                             <svg class="icon1" aria-hidden="true" viewBox="0 0 24 24">
                                 <g>
                                     <path
@@ -73,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
     </header>
 
     <button id="carritoBtn" data-bs-toggle="modal" data-bs-target="#carritoModal">
@@ -82,7 +83,7 @@
     </button>
 
     <!-- Productos -->
-    <section class="container my-5">
+    <section class="container mb-5 mt-4">
         
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="productosContainer">
 
