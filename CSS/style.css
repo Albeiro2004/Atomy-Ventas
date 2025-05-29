@@ -72,7 +72,7 @@ body {
 .button:active {
   scale: 1;
 }
-
+ 
 /* Carousel */
 
 .carouselPrincipal{
@@ -81,9 +81,10 @@ body {
 }
 
 .carouselPrincipal .carousel-item img {
+    height: 50vh;
     object-fit: cover;
     border-radius: 0 0 5px 5px;
-    height: 100%;
+
 }
 
 h2{

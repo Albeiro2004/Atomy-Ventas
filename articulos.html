@@ -38,7 +38,7 @@
     </div>
 
     <!-- Header -->
-    <header class="text-center mb-4">
+    <header class="text-center mb-4 headerArt">
     
             <div class="w-100 rounded-bottom-1 justify-content-center flex-column" style="background: #cad2d446; min-height: 13vh;">
                 <div>
@@ -55,7 +55,7 @@
                     <div class="row-cols-auto w-100 d-flex justify-content-center align-items-center g-2 busca">
                         <div class="col-2 me-3 filtro">
                             <select id="tipoFiltro" class="form-select">
-                                <option value="">Filtro</option>
+                                <option value="reset">Filtro</option>
                                 <option value="nombre">Por nombre</option>
                                 <option value="precioMin">Precio Mínimo</option>
                                 <option value="precioMax">Precio Máximo</option>
@@ -120,29 +120,30 @@
 
                 <div class="col">
                     <div class="card product-card h-100">
-                        <img src="images/atomy2.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
+                        <img src="images/imagen5.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Atomy Absolute CellActive Skincare Set
+                                Pasta Dental Sensitive (x 3 Unidades)
                             </h5>
                             <p class="card-text text-success fw-bold">$
-                                120.00
+                                80,000
                             </p>
                         </div>
                         <div class="card-footer bg-transparent">
                             <button class="btn btn-primary w-100 detalles-btn"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy2.jpg">
+                                data-name="Pasta Dental Sensitive (x 3 Unidades)"
+                                data-price="$ 80,000"
+                                data-img="images/imagen5.jpg"
+                                data-text="Contine efectos antiplaca, antibacterial y antiinflamatorio">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy2.jpg">
+                                data-name="Pasta Dental Sensitive (x 3 Unidades)"
+                                data-price="$ 80,000"
+                                data-img="images/imagen5.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
@@ -155,26 +156,27 @@
                         <img src="images/atomy3.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Atomy Absolute CellActive Skincare Set
+                                Cuidado Facial Piel 4 Pasos Ato
                             </h5>
                             <p class="card-text text-success fw-bold">$
-                                120.00
+                                284,000
                             </p>
                         </div>
                         <div class="card-footer bg-transparent">
                             <button class="btn btn-primary w-100 detalles-btn"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Cuidado Facial Piel 4 Pasos Ato"
+                                data-price="$ 284,000"
+                                data-img="images/atomy3.jpg"
+                                data-text="Contine efectos antiplaca, antibacterial y antiinflamatorio">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Cuidado Facial Piel 4 Pasos Ato"
+                                data-price="$ 284,000"
+                                data-img="images/atomy3.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
@@ -187,26 +189,27 @@
                         <img src="images/atomy4.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Atomy Absolute CellActive Skincare Set
+                                Protector Solar Beige
                             </h5>
                             <p class="card-text text-success fw-bold">$
-                                120.00
+                                70,000
                             </p>
                         </div>
                         <div class="card-footer bg-transparent">
                             <button class="btn btn-primary w-100 detalles-btn"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Protector Solar Beige"
+                                data-price="$ 70,000"
+                                data-img="images/atomy4.jpg"
+                                data-text="Contine efectos antiplaca, antibacterial y antiinflamatorio">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Protector Solar Beige"
+                                data-price="$ 70,000"
+                                data-img="images/atomy4.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
@@ -219,26 +222,27 @@
                         <img src="images/atomy5.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Atomy Absolute CellActive Skincare Set
+                                Bb Cream Atomy
                             </h5>
                             <p class="card-text text-success fw-bold">$
-                                120.00
+                                60,000
                             </p>
                         </div>
                         <div class="card-footer bg-transparent">
                             <button class="btn btn-primary w-100 detalles-btn"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Bb Cream Atomy"
+                                data-price="$ 60,000"
+                                data-img="images/atomy5.jpg"
+                                data-text="Contine efectos antiplaca, antibacterial y antiinflamatorio">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Bb Cream Atomy"
+                                data-price="$ 60,000"
+                                data-img="images/atomy5.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
@@ -251,26 +255,27 @@
                         <img src="images/atomy6.jpg" class="card-img-top product-img" alt="<?= $producto['nombre'] ?>">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Atomy Absolute CellActive Skincare Set
+                                Brillo Labial Atomy, SPF 15
                             </h5>
                             <p class="card-text text-success fw-bold">$
-                                120.00
+                                76,000
                             </p>
                         </div>
                         <div class="card-footer bg-transparent">
                             <button class="btn btn-primary w-100 detalles-btn"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Brillo Labial Atomy, SPF 15"
+                                data-price="$ 76,000"
+                                data-img="images/atomy6.jpg"
+                                data-text = "Tratamiento labial hidratante, enriquecido con bálsamo de rosas. 3,3g/0,11 oz">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
-                                data-name="Atomy Absolute CellActive Skincare Set"
-                                data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-name="Brillo Labial Atomy, SPF 15"
+                                data-price="$ 76,000"
+                                data-img="images/atomy6.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
@@ -295,14 +300,14 @@
                                 data-bs-target="#productoModal"
                                 data-name="Atomy Absolute CellActive Skincare Set"
                                 data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-img="images/atomy7.jpg">
                                 Ampliar <i class="fas fa-arrow-right ms-2"></i>
                             </button>
 
                             <button class="btn btn-success w-100 mt-2 agregar-carrito-btn"
                                 data-name="Atomy Absolute CellActive Skincare Set"
                                 data-price="$120.00"
-                                data-img="images/atomy1.jpg">
+                                data-img="images/atomy7.jpg">
                                 Agregar al carrito <i class="fas fa-cart-plus ms-2"></i>
                             </button>
                         </div>
