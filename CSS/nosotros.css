@@ -3,49 +3,85 @@
     padding: 3rem;
 }
 
-/* Estilos para los párrafos */
-.col-md-6 p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
+.productos-destacados img {
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.subtitulosNosotros{
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.h2Nosotros{
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.nosotros p {
+    font-size: 18px;
+}
+
+.productos-destacados h5 {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.productos-destacados p {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+/* Estilos para los testimonios */
+.testimonios .border {
+    background-color: #fff;
+    border-left: 4px solid #0d6efd;
+}
+
+.testimonios p {
+    font-style: italic;
     color: #495057;
 }
 
-/* Estilos para la lista de valores */
-.list-group {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+.testimonios small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #6c757d;
+    font-weight: 500;
 }
 
-.list-group-item {
-    padding: 1rem 1.25rem;
-    border-color: rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
+/* Estilos para la galería */
+.galeria img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
 }
 
-.list-group-item:hover {
-    background-color: #f1f8ff;
-    transform: translateX(5px);
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
-.text-primary {
-    color: #0d6efd;
+.hr-degradado {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #0d6efd, #6f42c1);
+    margin: 2rem 0;
+    border-radius: 2px;
 }
 
-.me-2 {
-    margin-right: 0.5rem;
-}
-
-/* Responsive */
+/* Responsive adicional */
 @media (max-width: 768px) {
-    .container.mb-5 {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+    .productos-destacados h5,
+    .productos-destacados p {
+        text-align: center;
     }
-    
-    .col-md-6:not(:last-child) {
-        margin-bottom: 2rem;
+
+    .testimonios .border {
+        text-align: center;
     }
+
+
 }

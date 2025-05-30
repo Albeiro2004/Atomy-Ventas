@@ -69,6 +69,38 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem("activeNavLink", this.href);
     });
   });
-    
+
 });
+
+function iniciarMapa() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    alert("No es soportado por tu navegador");
+  }
+
+  function success(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    getMap(lat, lon);
+  }
+
+  function error() {
+    alert("No se pudo obtener la ubicación");
+  }
+
+  function getMap(lat, lon) {
+    const map = L.map("map").setView([lat, lon], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([lat, lon]).addTo(map)
+      .bindPopup('Atomy Ventas')
+      .openPopup();
+  }
+}
+
+
 

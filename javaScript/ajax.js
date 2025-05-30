@@ -12,6 +12,8 @@ function loadContent(url) {
 
       document.querySelector("main").innerHTML = newContent; 
 
+      iniciarMapa(); // Inicializar el mapa si es necesario
+
       window.scrollTo({
         top: 0,
         behavior: "smooth", // Efecto suave (opcional)
