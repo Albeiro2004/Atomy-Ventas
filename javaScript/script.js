@@ -65,7 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem("activeNavLink", this.href);
     });
   });
+
 });
+
+let map; // Variable global para almacenar el mapa
 
 function iniciarMapa() {
   if (navigator.geolocation) {
@@ -85,7 +88,13 @@ function iniciarMapa() {
   }
 
   function getMap(lat, lon) {
-    const map = L.map("map").setView([lat, lon], 13);
+
+    if (map !== undefined) {
+      map.remove();
+    }
+
+    map = L.map("map").setView([lat, lon], 13);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; OpenStreetMap contributors'

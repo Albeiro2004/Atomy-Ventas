@@ -134,7 +134,8 @@
     }
 
     .mapa {
-        height: 30vh;
+        height: 50vh;
+        margin-bottom: 20px;
     }
     .btn-primary {
         width: 100%;

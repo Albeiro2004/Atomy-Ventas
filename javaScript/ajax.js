@@ -12,14 +12,19 @@ function loadContent(url) {
 
       document.querySelector("main").innerHTML = newContent; 
 
-      iniciarMapa(); // Inicializar el mapa si es necesario
+      if (html.includes('id="map"')) {
+        iniciarMapa();
+      }
+
+      if (html.includes('id="mainProductos"')) {
+          inicializarArticulos(); // Inicializar los artículos después de cargar el nuevo contenido
+      }
 
       window.scrollTo({
         top: 0,
         behavior: "smooth", // Efecto suave (opcional)
       });
       
-      inicializarArticulos(); // Inicializar los artículos después de cargar el nuevo contenido
       setupInternalLinks(); // Volver a activar los enlaces internos
     })
     .catch((err) => {

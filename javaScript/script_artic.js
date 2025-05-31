@@ -9,7 +9,7 @@ function inicializarArticulos() {
       const img = button.getAttribute("data-img");
       const des = button.getAttribute("data-text");
 
-      const modalHeaderTitle = productoModal.querySelector("#modalTitle"); // <--- ID correcto
+      const modalHeaderTitle = productoModal.querySelector("#modalTitle"); 
       const modalBodyTitle = productoModal.querySelector("#modal-title");
       const modalPrice = productoModal.querySelector("#modal-price");
       const modalImg = productoModal.querySelector("#modal-image");
@@ -129,6 +129,7 @@ function inicializarArticulos() {
   const carritoTotal = document.getElementById('carrito-total');
   const carritoContador = document.getElementById('carrito-contador');
 
+
   actualizarCarrito();
 
   document.querySelectorAll('.agregar-carrito-btn').forEach(btn => {
@@ -151,6 +152,7 @@ function inicializarArticulos() {
   });
 
   function actualizarCarrito() {
+
     carritoLista.innerHTML = '';
     let total = 0;
 
