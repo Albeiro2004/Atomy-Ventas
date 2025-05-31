@@ -259,3 +259,28 @@ if (botonModal) {
 
 }
 
+function cerrarModalProducto() {
+  const modalElement = document.getElementById('productoModal');
+
+  // Obtener instancia del modal
+  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
+
+  // Forzar cierre de clases y backdrop si no se eliminan correctamente
+  modalElement.classList.remove('show');
+  modalElement.setAttribute('aria-hidden', 'true');
+  modalElement.style.display = 'none';
+
+  // Eliminar backdrop manualmente
+  const backdrop = document.querySelector('.modal-backdrop');
+  if (backdrop) {
+    backdrop.remove();
+  }
+
+  // Restaurar scroll y estilos del body
+  document.body.classList.remove('modal-open');
+  document.body.style.overflow = '';
+  document.body.style.paddingRight = '';
+}
