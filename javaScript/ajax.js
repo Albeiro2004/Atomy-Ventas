@@ -20,6 +20,11 @@ function loadContent(url) {
           inicializarArticulos(); // Inicializar los artículos después de cargar el nuevo contenido
       }
 
+      if (html.includes('id="mainCalendario"')) {
+        iniciarCalendario();
+      }
+
+
       window.scrollTo({
         top: 0,
         behavior: "smooth", // Efecto suave (opcional)

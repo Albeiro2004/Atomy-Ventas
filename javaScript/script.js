@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
   // Inicializar tooltips
   var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const navbarCollapse = document.getElementById("navbarSupportedContent");
         if (navbarCollapse && navbarCollapse.classList.contains('show')) {
           const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
-                           new bootstrap.Collapse(navbarCollapse);
+                    new bootstrap.Collapse(navbarCollapse);
           bsCollapse.hide();
         }
       }
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add("active");
       localStorage.setItem("activeNavLink", this.href);
     });
-  });
+  });     
 
 });
 
@@ -105,3 +106,117 @@ function iniciarMapa() {
       .openPopup();
   }
 }
+
+  function iniciarCalendario() {
+
+  let currentDate = new Date();
+        
+        // Eventos de ejemplo
+        const events = {
+            '2025-06-05': ['academia-exito'],
+            '2025-06-12': ['one-day-seminar'],
+            '2025-06-18': ['atomy-seminar'],
+            '2025-06-25': ['academia-exito', 'one-day-seminar'],
+            '2025-07-03': ['atomy-seminar'],
+            '2025-07-10': ['academia-exito'],
+            '2025-07-17': ['one-day-seminar'],
+            '2025-07-24': ['atomy-seminar'],
+            '2025-05-28': ['academia-exito'],
+            '2025-05-15': ['one-day-seminar']
+        };
+        
+        const monthNames = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+        
+        function generateCalendar(year, month) {
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const today = new Date();
+            
+            // Actualizar el título
+            document.getElementById('monthYear').textContent = 
+                `${monthNames[month]} ${year}`;
+            
+            // Limpiar el calendario
+            const calendarBody = document.getElementById('calendarBody');
+            calendarBody.innerHTML = '';
+            
+            // Obtener el primer día de la semana (0 = domingo)
+            let startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+            
+            // Generar 6 semanas
+            for (let week = 0; week < 6; week++) {
+                const row = document.createElement('tr');
+                
+                for (let day = 0; day < 7; day++) {
+                    const cell = document.createElement('td');
+                    const currentDay = new Date(startDate);
+                    currentDay.setDate(startDate.getDate() + (week * 7) + day);
+                    
+                    const button = document.createElement('button');
+                    button.className = 'day-cell';
+                    button.textContent = currentDay.getDate();
+                    
+                    // Verificar si es el día actual
+                    if (currentDay.toDateString() === today.toDateString()) {
+                        button.classList.add('today');
+                    }
+                    
+                    // Verificar si es de otro mes
+                    if (currentDay.getMonth() !== month) {
+                        button.classList.add('other-month');
+                    }
+                    
+                    // Agregar eventos
+                    const dateKey = currentDay.toISOString().split('T')[0];
+                    if (events[dateKey]) {
+                        events[dateKey].forEach(eventType => {
+                            const dot = document.createElement('div');
+                            dot.className = `event-dot ${eventType}`;
+                            button.appendChild(dot);
+                        });
+                    }
+                    
+                    // Agregar evento de click
+                    button.addEventListener('click', () => {
+                        const dayEvents = events[dateKey] || [];
+                        if (dayEvents.length > 0) {
+                            const eventNames = dayEvents.map(type => {
+                                switch(type) {
+                                    case 'academia-exito': return 'ACADEMIA DEL ÉXITO';
+                                    case 'one-day-seminar': return 'ONE DAY SEMINAR';
+                                    case 'atomy-seminar': return 'ATOMY OPEN SEMINAR';
+                                    default: return type;
+                                }
+                            });
+                            alert(`Eventos del ${currentDay.getDate()}/${currentDay.getMonth() + 1}/${currentDay.getFullYear()}:\n\n• ${eventNames.join('\n• ')}`);
+                        }
+                    });
+                    
+                    cell.appendChild(button);
+                    row.appendChild(cell);
+                }
+                
+                calendarBody.appendChild(row);
+            }
+        }
+        
+        function previousMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+        }
+        
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+        }      
+
+        window.previousMonth = previousMonth;
+        window.nextMonth = nextMonth;
+
+            generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+
+} 
