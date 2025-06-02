@@ -3,7 +3,7 @@
 body {
     font-family: "Special Gothic Condensed One", sans-serif;
     background: #A1FFCE;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, #FAFFD1, #a1ffce96);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
@@ -345,7 +345,6 @@ footer a:hover {
  .vi{
       box-shadow: 0 0 20px #518ecfe8; 
     }
-
         
 .calendar-card {
   background: rgba(255, 255, 255, 0.753);
@@ -359,7 +358,7 @@ footer a:hover {
             background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
             color: white;
             border-radius: 15px 15px 0 0;
-            padding: 3px;
+            padding: 10px;
             text-align: center;
         }
         
@@ -367,15 +366,14 @@ footer a:hover {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
         }
         
         .nav-btn {
             background: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -389,22 +387,17 @@ footer a:hover {
             transform: scale(1.1);
         }
         
-        .calendar-table {
-            margin: 0;
-        }
-        
         .calendar-table th {
             background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
             color: white;
             border: none;
-            padding: 5px;
-            font-weight: 600;
+            padding: 2px;
             text-align: center;
         }
         
         .calendar-table td {
             border: 1px solid #e9ecef;
-            padding: 3px;
+            padding: 2px;
             position: relative;
             vertical-align: middle;
             text-align: center;
@@ -449,28 +442,30 @@ footer a:hover {
             border-radius: 50%;
         }
         
-        .academia-exito {
+        .congreso {
             background-color: gold;
         }
         
-        .one-day-seminar {
+        .reunion {
             background-color: dodgerblue;
         }
         
-        .atomy-seminar {
+        .capacitacion {
             background-color: orchid;
         }
         
         .legend {
             background: rgba(248, 249, 250, 0.8);
             border-radius: 10px;
-            margin-top: 15px;
         }
         
         .legend-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
+        }
+
+        .legend-item span {
+            font-size: 10px;
         }
         
         .legend-dot {
@@ -492,6 +487,17 @@ footer a:hover {
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+
+.acceso-rapido a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+}
+
+.acceso-rapido a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 
 /* Responsive adjustments */

@@ -113,16 +113,16 @@ function iniciarMapa() {
         
         // Eventos de ejemplo
         const events = {
-            '2025-06-05': ['academia-exito'],
-            '2025-06-12': ['one-day-seminar'],
-            '2025-06-18': ['atomy-seminar'],
-            '2025-06-25': ['academia-exito', 'one-day-seminar'],
-            '2025-07-03': ['atomy-seminar'],
-            '2025-07-10': ['academia-exito'],
-            '2025-07-17': ['one-day-seminar'],
-            '2025-07-24': ['atomy-seminar'],
-            '2025-05-28': ['academia-exito'],
-            '2025-05-15': ['one-day-seminar']
+            '2025-06-05': ['congreso'],
+            '2025-06-12': ['reunion'],
+            '2025-06-18': ['reunion'],
+            '2025-06-25': ['capacitacion', 'reunion'],
+            '2025-07-03': ['capacitacion'],
+            '2025-07-10': ['reunion'],
+            '2025-07-17': ['congreso'],
+            '2025-07-24': ['capacitacion'],
+            '2025-05-28': ['congreso'],
+            '2025-05-15': ['reunion'],
         };
         
         const monthNames = [
@@ -147,8 +147,8 @@ function iniciarMapa() {
             let startDate = new Date(firstDay);
             startDate.setDate(startDate.getDate() - firstDay.getDay());
             
-            // Generar 6 semanas
-            for (let week = 0; week < 6; week++) {
+            // Generar 5 semanas
+            for (let week = 0; week < 5; week++) {
                 const row = document.createElement('tr');
                 
                 for (let day = 0; day < 7; day++) {
@@ -186,9 +186,9 @@ function iniciarMapa() {
                         if (dayEvents.length > 0) {
                             const eventNames = dayEvents.map(type => {
                                 switch(type) {
-                                    case 'academia-exito': return 'ACADEMIA DEL ÉXITO';
-                                    case 'one-day-seminar': return 'ONE DAY SEMINAR';
-                                    case 'atomy-seminar': return 'ATOMY OPEN SEMINAR';
+                                    case 'congreso': return 'CONGRESO';
+                                    case 'reunion': return 'REUNIÓN';
+                                    case 'capacitacion': return 'CAPACITACIÓN';
                                     default: return type;
                                 }
                             });

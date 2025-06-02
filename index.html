@@ -165,124 +165,125 @@
     </div>
 
     <div class="row w-100 m-0">
-        <h2 class="titulo text-center py-2">Panel de Control</h2>
-        <div class="row g-4 justify-content-center align-content-center p-5 my-0 control">
-    
-            <!-- Panel de accesos rápidos -->
-            <div class="col-md-4 m-0 align-content-center">
-                <div class="row g-3">
-            
-                    <div class="col-6">
-                        <a href="#registro.html" class="text-decoration-none text-dark">
-                            <div class="text-center p-3 border rounded h-100 shadow-sm transition bg-info-subtle">
-                                <i class="bi bi-person-check text-danger fs-2"></i>
-                                <p class="mb-0">Comprobar<br>Registro</p>
-                            </div>
-                        </a>
-                    </div>
-            
-                    <div class="col-6">
-                        <a href="#plan.html" class="text-decoration-none text-dark">
-                            <div class="text-center p-3 border rounded h-100 shadow-sm transition bg-info-subtle">
-                                <i class="bi bi-bar-chart-line text-success fs-2"></i>
-                                <p class="mb-0">Plan de<br>Compensación</p>
-                            </div>
-                        </a>
-                    </div>
-            
-                    <div class="col-6">
-                        <a href="#recursos.html" class="text-decoration-none text-dark">
-                            <div class="text-center p-3 border rounded h-100 shadow-sm transition bg-info-subtle">
-                                <i class="bi bi-folder2-open text-info fs-2"></i>
-                                <p class="mb-0">Recursos</p>
-                            </div>
-                        </a>
-                    </div>
-            
-                    <div class="col-6">
-                        <a href="#tienda.html" class="text-decoration-none text-dark">
-                            <div class="text-center p-3 border rounded h-100 shadow-sm transition bg-info-subtle">
-                                <i class="bi bi-bag-check text-warning fs-2"></i>
-                                <p class="mb-0">Tienda</p>
-                            </div>
-                        </a>
-                    </div>
-            
-                </div>
-            </div>
-    
-            <!-- Panel de calendario -->
-            <div class="col-md-4 m-0 calendar">
-                <div id="mainCalendario" class="calendar-container">
-                    <div class="calendar-card fade-in">
-                        <div class="calendar-header">
-                            <div class="month-nav">
-                                <button class="nav-btn" onclick="previousMonth()">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <h4 id="monthYear" class="mb-0"></h4>
-                                <button class="nav-btn" onclick="nextMonth()">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                            <div class="small opacity-75">Calendario de Eventos</div>
+        <h2 class="titulo text-center py-2"><i class="bi bi-bar-chart-fill me-5"></i>
+            Panel de Control<i class="bi bi-bar-chart-fill ms-5"></i></h2>
+        <div class="container-fluid d-flex justify-content-center align-content-center control" style="height: 60vh;">
+            <div class="row w-100">
+
+                <div class="col-md-4 m-0 d-flex align-items-center py-5 px-3" style="height: 100%;">
+                    <div class="row g-3 align-items-stretch h-100 w-100">
+                
+                        <div class="acceso-rapido col-6 d-flex align-items-center justify-content-center">
+                            <a href="#registro.html" class="text-decoration-none text-dark w-100">
+                                <div class="text-center p-3 border rounded-4 shadow-sm transition bg-info-subtle">
+                                    <i class="bi bi-person-check text-danger fs-2"></i>
+                                    <p class="mb-0">Comprobar Registro</p>
+                                </div>
+                            </a>
                         </div>
-    
-                        <div class="calendar-body">
-                            <table class="table calendar-table">
-                                <thead>
-                                    <tr>
-                                        <th>D</th>
-                                        <th>L</th>
-                                        <th>M</th>
-                                        <th>M</th>
-                                        <th>J</th>
-                                        <th>V</th>
-                                        <th>S</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="calendarBody"></tbody>
-                            </table>
-    
-                            <div class="legend p-3">
-                                <div class="legend-item">
-                                    <div class="legend-dot academia-exito"></div>
-                                    <span class="small">ACADEMIA DEL ÉXITO</span>
+                
+                        <div class="acceso-rapido col-6 d-flex align-items-center justify-content-center">
+                            <a href="https://www.atomy.com/co/Home/Business/MarketingPlan" target="_blank" class="text-decoration-none text-dark w-100">
+                                <div class="text-center p-3 border rounded-4 shadow-sm transition bg-info-subtle">
+                                    <i class="bi bi-bar-chart-line text-success fs-2"></i>
+                                    <p class="mb-0">Plan de Compensación</p>
                                 </div>
-                                <div class="legend-item">
-                                    <div class="legend-dot one-day-seminar"></div>
-                                    <span class="small">ONE DAY SEMINAR</span>
+                            </a>
+                        </div>
+                
+                        <div class="acceso-rapido col-6 d-flex align-items-center justify-content-center">
+                            <a href="https://www.atomy.com/co/Home/Account/Login?rpage=Home%2FMyHappyCenter%2FArchiveList" target="_blank" class="text-decoration-none text-dark w-100">
+                                <div class="text-center p-3 border rounded-4 shadow-sm transition bg-info-subtle">
+                                    <i class="bi bi-folder2-open text-info fs-2"></i>
+                                    <p class="mb-0">Recursos</p>
                                 </div>
-                                <div class="legend-item">
-                                    <div class="legend-dot atomy-seminar"></div>
-                                    <span class="small">ATOMY OPEN SEMINAR</span>
+                            </a>
+                        </div>
+                
+                        <div class="acceso-rapido col-6 d-flex align-items-center justify-content-center">
+                            <a href="#articulos.html" class="text-decoration-none text-dark w-100">
+                                <div class="text-center p-3 border rounded-4 shadow-sm transition bg-info-subtle">
+                                    <i class="bi bi-bag-check text-warning fs-2"></i>
+                                    <p class="mb-0">Tienda</p>
+                                </div>
+                            </a>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <!-- Panel de calendario -->
+                <div class="col-md-4 calendar align-content-center m-0 px-3" style="height: 100%;">
+                    <div id="mainCalendario" class="calendar-container">
+                        <div class="calendar-card fade-in">
+                            <div class="calendar-header">
+                                <div class="month-nav">
+                                    <button class="nav-btn" onclick="previousMonth()">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <h4 id="monthYear" class="mb-0 small"></h4>
+                                    <button class="nav-btn" onclick="nextMonth()">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                
+                            <div class="calendar-body">
+                                <table class="table calendar-table">
+                                    <thead>
+                                        <tr>
+                                            <th>D</th>
+                                            <th>L</th>
+                                            <th>M</th>
+                                            <th>M</th>
+                                            <th>J</th>
+                                            <th>V</th>
+                                            <th>S</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="calendarBody"></tbody>
+                                </table>
+                
+                                <div class="legend p-1">
+                                    <div class="legend-item">
+                                        <div class="legend-dot congreso"></div>
+                                        <span class="small">CONGRESO</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-dot reunion"></div>
+                                        <span class="small">REUNIÓN</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-dot capacitacion"></div>
+                                        <span class="small">CAPACITACIÓN</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-    
-            <!-- Panel de atención al cliente -->
-            <div class="col-md-4 m-0 align-content-center">
-                <div class="border rounded-5 p-3 shadow-sm bg-light">
-                    <h5 class="fw-bold mb-4">Atención a Clientes</h5>
-                    <p class="mb-3"><i class="bi bi-telephone-fill"></i> Teléfono:<br>
-                        <strong class="text-dark">+57 3228383695</strong>
-                    </p>
-                    <p class="mb-3"><i class="bi bi-whatsapp"></i> WhatsApp:<br>
-                        <strong class="text-primary">+57 3136294424</strong>
-                    </p>
-                    <p class="text-muted small mb-3"><i class="bi bi-clock"></i> Horario: Lun - Sáb 08:00 - 18:00 (GMT)</p>
-                    <a href="#contacto.html" class="btn btn-info text-white w-100 p-0">Más información ></a>
+                
+                <!-- Panel de atención al cliente -->
+                <div class="col-md-4 align-content-center m-0 px-3" style="height: 100%;">
+                    <div class="border rounded-5 p-3 shadow-sm bg-light">
+                        <h5 class="fw-bold mb-4">Atención a Clientes</h5>
+                        <p class="mb-3"><i class="bi bi-telephone-fill"></i> Teléfono:<br>
+                            <strong class="text-dark">+57 3228383695</strong>
+                        </p>
+                        <p class="mb-3"><i class="bi bi-whatsapp"></i> WhatsApp:<br>
+                            <strong class="text-primary">+57 3136294424</strong>
+                        </p>
+                        <p class="text-muted small mb-3"><i class="bi bi-clock"></i> Horario: Lun - Sáb 08:00 - 18:00 (GMT)</p>
+                        <a href="#contacto.html" class="btn btn-info text-white w-100 p-0">Más información ></a>
+                    </div>
                 </div>
-            </div>
+                </div>
     
         </div>
     </div>
 
     <div class="row w-100 m-0">
-        <h2 class="titulo text-center py-2">Recomendado</h2>
+        <h2 class="titulo text-center py-2"><i class="bi bi-star me-5"></i>Recomendado<i class="bi bi-star ms-5"></i></h2>
         <div class="video pt-5">
         <div class="row justify-content-center gap-4">
             <div class="col-auto">

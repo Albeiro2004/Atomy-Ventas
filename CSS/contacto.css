@@ -38,9 +38,8 @@
 #map {
     height: 95%;
     width: 100%;
-    border-radius: 15px;
-    background-color: #e9ecef;
-    box-shadow: 0 10px 10px #64a0fac9;
+    background-color: #0080ff;
+    border-bottom: #70b0e4 1px solid; 
 }
 
 /* Formulario de contacto */

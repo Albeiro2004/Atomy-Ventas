@@ -9,7 +9,24 @@
 
     <!-- Contenido Principal -->
     <main>
+        
+
+        <div class="container-fluid p-0">
+            <div class="row g-4 w-100 mx-0">
+                <div class="mapa col-12 p-0">
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+                    <h2 class="titulo text-center py-2">
+                        <i class="bi bi-chevron-double-up me-5"></i>
+                        Aquí también nos encuentras
+                        <i class="bi bi-chevron-double-up ms-5"></i>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+
         <div class="contacto">
+
             <section class="contacto-info mb-3">
                 <div class="row g-4">
                     <!-- Dirección -->
@@ -39,10 +56,9 @@
                 </div>
             </section>
 
-        <!-- Formulario y Mapa -->
-        <div class="row g-4 h3Contacto">
-            <div class="col-lg-6 formulario">
-                <h3 class="mb-4">Envíanos un mensaje</h3>
+        <div class="row g-4 justify-content-center h3Contacto">
+            <div class="col-12 col-md-8 col-lg-6 formulario">
+                <h3 class="mb-4 text-center">Envíanos un mensaje</h3>
                 <form id="formulario-contacto">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre completo</label>
@@ -60,14 +76,14 @@
                         <label for="mensaje" class="form-label">Mensaje</label>
                         <textarea class="form-control" id="mensaje" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </div>
                 </form>
             </div>
-            <div class="col-lg-6 mapa">
-                <h3 class="mb-4">Visítanos</h3>
-                <div id="map"></div>
-            </div>
         </div>
+
+        
 
         <section class="contacto-horarios mt-5">
             <h3>Horarios de Atención</h3>
