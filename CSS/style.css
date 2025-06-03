@@ -356,132 +356,132 @@ footer a:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
         
-        .calendar-header {
-            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            border-radius: 15px 15px 0 0;
-            padding: 10px;
-            text-align: center;
-        }
-        
-        .month-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
-        .calendar-table th {
-            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            border: none;
-            padding: 2px;
-            text-align: center;
-        }
-        
-        .calendar-table td {
-            border: 1px solid #e9ecef;
-            padding: 2px;
-            position: relative;
-            vertical-align: middle;
-            text-align: center;
-        }
-        
-        .day-cell {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .day-cell:hover {
-            background: rgba(116, 185, 255, 0.1);
-            transform: scale(1.05);
-        }
-        
-        .today {
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: bold;
-            border-radius: 50%;
-        }
-        
-        .other-month {
-            color: #ccc;
-        }
-        
-        .event-dot {
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-        }
-        
-        .congreso {
-            background-color: gold;
-        }
-        
-        .reunion {
-            background-color: dodgerblue;
-        }
-        
-        .capacitacion {
-            background-color: orchid;
-        }
-        
-        .legend {
-            background: rgba(248, 249, 250, 0.8);
-            border-radius: 10px;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-        }
+.calendar-header {
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+    text-align: center;
+}
 
-        .legend-item span {
-            font-size: 10px;
-        }
-        
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        
-        .calendar-body {
-            padding: 10px;
-        }
-        
-        .fade-in {
+.month-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.calendar-table th {
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 2px;
+    text-align: center;
+}
+
+.calendar-table td {
+    border: 1px solid #e9ecef;
+    padding: 2px;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.day-cell {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.day-cell:hover {
+    background: rgba(116, 185, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.today {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.other-month {
+    color: #ccc;
+}
+
+.event-dot {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.congreso {
+    background-color: gold;
+}
+
+.reunion {
+    background-color: dodgerblue;
+}
+
+.capacitacion {
+    background-color: orchid;
+}
+
+.legend {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-item span {
+    font-size: 10px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+.fade-in {
   opacity: 0;
   animation: fadeIn 1s forwards;
 }
@@ -594,5 +594,14 @@ footer a:hover {
 
     .control {
       gap: 20px;
+    }
+
+    .calendar-card {
+      margin-top: 20px;
+      padding: 15px;
+    }
+
+    .atencion {
+      padding: 30px !important;
     }
 }
