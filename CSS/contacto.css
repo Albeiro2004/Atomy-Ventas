@@ -43,39 +43,174 @@
 }
 
 /* Formulario de contacto */
-#formulario-contacto {
-    height: 95%;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 10px #64a0fac9;
+:root {
+            --primary-color: #667eea;
+            --primary-dark: #5a6fd8;
+            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-light: 0 10px 30px rgba(102, 126, 234, 0.1);
+            --shadow-hover: 0 15px 40px rgba(102, 126, 234, 0.2);
+        }
+
+.contact-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    transition: all 0.3s ease;
 }
 
-#formulario-contacto h2 {
-    color: #0d6efd;
-    font-weight: bold;
+.contact-container:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.contact-title {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-bg);
+    border-radius: 2px;
+}
+
+.form-floating {
+    margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .form-control {
-    padding: 0.75rem 1rem;
-    border: 1px solid #dee2e6;
-    transition: border-color 0.3s ease;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .form-control:focus {
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.15);
+    background: white;
 }
 
-/* Botón */
-#formulario-contacto .btn-primary {
-    padding: 0.75rem 1.5rem;
+.form-floating > label {
+    color: #6c757d;
     font-weight: 500;
-    transition: background-color 0.3s ease;
 }
 
-#formulario-contacto .btn-primary:hover {
-    background-color: #0b5ed7;
+.input-group-text {
+    background: var(--gradient-bg);
+    border: 2px solid var(--primary-color);
+    color: white;
+    border-radius: 12px 0 0 12px;
+}
+
+.input-group .form-control {
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.btn-submit {
+    background: var(--gradient-bg);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a5d9a 100%);
+}
+
+.btn-submit:active {
+    transform: translateY(-1px);
+}
+
+.btn-submit .spinner-border {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: none;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+    animation: shake 0.5s ease-in-out;
+}
+
+.form-control.is-valid {
+    border-color: #28a745;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.success-message {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    display: none;
+    animation: slideInDown 0.5s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-icons {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.form-floating:focus-within .floating-icons {
+    opacity: 1;
+    top: -5px;
+}
+
+.char-counter {
+    font-size: 0.85rem;
+    color: #6c757d;
+    text-align: right;
+    margin-top: 0.25rem;
 }
 
 /* Horarios de Atención */
@@ -124,6 +259,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+
+    .contacto-info{
+        align-items: stretch;
+    }
     .contact-icon {
         font-size: 2rem;
     }
@@ -142,5 +281,32 @@
 
     .mapa, .formulario {
         padding: 1rem 0;
+    }
+
+    .contacto-form{
+        width: 100%;
+        margin: 0;
+        padding: 0%;
+    }
+    .contact-container {
+        width: 100%;
+        margin: 0rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-title {
+        font-size: 1.75rem;
+    }
+
+    #map {
+        height: 50vh !important;
+    }
+
+    .mapa .titulo {
+        font-size: 22px;
+    }
+
+    .contacto-info {
+        margin-bottom: 40px !important;
     }
 }

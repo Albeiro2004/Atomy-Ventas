@@ -122,11 +122,13 @@ body {
   color: #808080;
 }
 
+.control {
+  background-color: #d8d8d86e;
+}
 .boletin{
   background-color: #d8d8d86e;
 }
 
-/* From Uiverse.io by satyamchaudharydev */ 
 .buttonDes {
   --width: 100px;
   --height: 35px;

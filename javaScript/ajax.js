@@ -24,6 +24,9 @@ function loadContent(url) {
         iniciarCalendario();
       }
 
+      if (html.includes('id="main-contacto"')) {
+        iniform();
+      }
 
       window.scrollTo({
         top: 0,
