@@ -518,6 +518,10 @@ footer a:hover {
     margin-left: 15px !important;
   }
 
+  .destacados {
+    padding: 0 !important;
+  }
+
   /* Ajustar el botón de volver al inicio */
   #btnInicio {
     font-size: 14px;
@@ -549,11 +553,11 @@ footer a:hover {
     .card {
       margin: 0 auto;
       max-height: 60vh;
-      max-width: 85%;
+      max-width: 90%;
     }
 
     .titulo, .tituloVideo, .tituloSuscrip{
-      font-size: 26px;
+      font-size: 20px;
     }
     .titulo::after {
       width: 65%;

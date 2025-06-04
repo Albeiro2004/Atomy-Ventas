@@ -32,7 +32,7 @@ function inicializarArticulos() {
 
   if (productosContainer && verMasBtn && verMenosBtn) {
     const allProducts = Array.from(productosContainer.querySelectorAll(".col"));
-    const batchSize = 12;
+    const batchSize = 16;
     let visibleCount = batchSize;
     let filteredProducts = [...allProducts];
 

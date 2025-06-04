@@ -28,6 +28,10 @@ function loadContent(url) {
         iniform();
       }
 
+      if (html.includes('id="main-noso"')) {
+        galeria();
+      }
+
       window.scrollTo({
         top: 0,
         behavior: "smooth", // Efecto suave (opcional)
