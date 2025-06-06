@@ -17,7 +17,8 @@ function loadContent(url) {
       }
 
       if (html.includes('id="mainProductos"')) {
-          inicializarArticulos(); // Inicializar los artículos después de cargar el nuevo contenido
+        cargarProd();
+        inicializarArticulos(); // Inicializar los artículos después de cargar el nuevo contenido
       }
 
       if (html.includes('id="mainCalendario"')) {

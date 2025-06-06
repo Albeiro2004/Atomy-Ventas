@@ -133,23 +133,24 @@ function inicializarArticulos() {
   actualizarCarrito();
 
   document.querySelectorAll('.agregar-carrito-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const nombre = btn.dataset.name;
-      const precio = parseFloat(btn.dataset.price.replace('$', '').replace(',', ''));
-      const img = btn.dataset.img;
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // ✅ Esto evita que el clic dispare el modal
 
-      const index = carrito.findIndex(p => p.nombre === nombre);
+    const nombre = btn.dataset.name;
+    const precio = parseFloat(btn.dataset.price.replace('$', '').replace(/[.,]/g, ''));
+    const img = btn.dataset.img;
 
-      if (index !== -1) {
-        carrito[index].cantidad += 1;
-      } else {
-        carrito.push({ nombre, precio, img, cantidad: 1 });
-      }
+    const index = carrito.findIndex(p => p.nombre === nombre);
 
+    if (index !== -1) {
+      carrito[index].cantidad += 1;
+    } else {
+      carrito.push({ nombre, precio, img, cantidad: 1 });
+    }
 
-      actualizarCarrito();
-    });
+    actualizarCarrito();
   });
+});
 
   function actualizarCarrito() {
 
