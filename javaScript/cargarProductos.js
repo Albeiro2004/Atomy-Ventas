@@ -146,7 +146,6 @@ const productos = [
 const contenedor = document.getElementById("productosContainer");
 const filtros = document.getElementById("filtrosCategorias");
 
-// 1. Contar productos por categoría
 const contarCategorias = () => {
   const conteos = {};
   productos.forEach(p => {
@@ -155,7 +154,6 @@ const contarCategorias = () => {
   return conteos;
 };
 
-// 2. Generar botones de filtro
 const generarBotonesFiltro = () => {
   const conteos = contarCategorias();
   const categorias = ["Todos", ...Object.keys(conteos)];
@@ -181,7 +179,6 @@ const generarBotonesFiltro = () => {
   });
 };
 
-// 3. Mostrar productos
 const mostrarProductos = (lista) => {
   contenedor.innerHTML = "";
   if (lista.length === 0) {
@@ -225,9 +222,9 @@ const mostrarProductos = (lista) => {
     `;
     contenedor.innerHTML += card;
   });
+  
 };
 
-// 4. Eventos de filtrado
 filtros.addEventListener("click", e => {
   if (e.target.tagName === "BUTTON" || e.target.parentElement.tagName === "BUTTON") {
     const btn = e.target.tagName === "BUTTON" ? e.target : e.target.parentElement;
@@ -247,8 +244,6 @@ filtros.addEventListener("click", e => {
 // Inicialización
 generarBotonesFiltro();
 mostrarProductos(productos);
-
-
 
 }
 

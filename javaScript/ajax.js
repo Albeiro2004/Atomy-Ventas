@@ -31,6 +31,7 @@ function loadContent(url) {
 
       if (html.includes('id="main-noso"')) {
         galeria();
+        modalMisionVision();
       }
 
       window.scrollTo({

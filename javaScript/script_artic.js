@@ -134,7 +134,7 @@ function inicializarArticulos() {
 
   document.querySelectorAll('.agregar-carrito-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
-    e.stopPropagation(); // ✅ Esto evita que el clic dispare el modal
+    e.stopPropagation();
 
     const nombre = btn.dataset.name;
     const precio = parseFloat(btn.dataset.price.replace('$', '').replace(/[.,]/g, ''));

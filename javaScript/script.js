@@ -220,3 +220,53 @@ function iniciarMapa() {
             generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
 
 } 
+
+function modalMisionVision() {
+
+        const misionBtn = document.getElementById('misionBtn');
+        const visionBtn = document.getElementById('visionBtn');
+        const misionModal = document.getElementById('misionModal');
+        const visionModal = document.getElementById('visionModal');
+        const closeBtns = document.querySelectorAll('.close-btn');
+        
+        // Open modals
+        misionBtn.addEventListener('click', () => {
+            misionModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        visionBtn.addEventListener('click', () => {
+            visionModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Close modals
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                misionModal.classList.remove('active');
+                visionModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Close when clicking outside modal content
+        window.addEventListener('click', (e) => {
+            if (e.target === misionModal) {
+                misionModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            if (e.target === visionModal) {
+                visionModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                misionModal.classList.remove('active');
+                visionModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+}
