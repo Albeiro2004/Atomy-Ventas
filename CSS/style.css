@@ -556,6 +556,12 @@ footer a:hover {
       max-width: 90%;
     }
 
+    .card img {
+      width: 100%;
+      height: auto;
+      max-height: 30vh;
+    }
+
     .titulo, .tituloVideo, .tituloSuscrip{
       font-size: 22px;
     }
