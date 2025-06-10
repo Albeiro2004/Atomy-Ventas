@@ -307,7 +307,7 @@
 
 :root {
     --primary-color: #a7e1f7;
-    --secondary-color: #3498db;
+    --secondary-color: #91d3ff;
     --accent-color: #e74c3c;
     --light-color: #ecf0f1;
     --dark-color: #1b2530;
@@ -318,13 +318,13 @@
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: rgb(94, 92, 92);
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px 20px;
     width: 100%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .headerNosotros h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary-darker), var(--accent-color));
     background-clip: text;
@@ -335,7 +335,7 @@
 }
 
 .headerNosotros .subtitle {
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -352,10 +352,10 @@
 }
 
 .modal-btn {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: linear-gradient(135deg, var(--secondary-color), rgb(91, 171, 236));
     color: rgb(56, 56, 56);
     border: none;
-    padding: 10px;
+    padding: 5px 8px;
     font-size: 1.2rem;
     border-radius: 50px;
     cursor: pointer;
