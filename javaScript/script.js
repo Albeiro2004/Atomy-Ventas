@@ -69,43 +69,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-let map; // Variable global para almacenar el mapa
+let map;
 
-function iniciarMapa() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    alert("No es soportado por tu navegador");
-  }
-
-  function success(position) {
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
-    getMap(lat, lon);
-  }
-
-  function error() {
-    alert("No se pudo obtener la ubicación");
-  }
-
-  function getMap(lat, lon) {
-
-    if (map !== undefined) {
-      map.remove();
+  function iniciarMapa() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success, error);
+    } else {
+      alert("Tu navegador no soporta geolocalización.");
     }
 
-    map = L.map("map").setView([lat, lon], 13);
+    function success(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+      if (map !== undefined) {
+        map.remove();
+      }
 
-    L.marker([lat, lon]).addTo(map)
-      .bindPopup('Atomy Ventas')
-      .openPopup();
+      map = L.map("map").setView([lat, lon], 13);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Punto de destino: ATOMY VENTAS
+      const destino = [8.950829, -75.445915];
+
+      // Mostrar ruta desde ubicación hasta el destino
+      L.Routing.control({
+        waypoints: [
+          L.latLng(lat, lon),      // Origen: ubicación actual del usuario
+          L.latLng(destino[0], destino[1])  // Destino
+        ],
+        language: 'es',
+        routeWhileDragging: false,
+        showAlternatives: true,
+        createMarker: function(i, wp, nWps) {
+          if (i === 0) {
+            return L.marker(wp.latLng).bindPopup("Tu ubicación").openPopup();
+          } else if (i === nWps - 1) {
+            return L.marker(wp.latLng).bindPopup("Destino: Atomy Ventas");
+          } else {
+            return L.marker(wp.latLng);
+          }
+        }
+      }).addTo(map);
+    }
+
+    function error() {
+      alert("No se pudo obtener tu ubicación.");
+    }
   }
-}
+
+  iniciarMapa();
 
   function iniciarCalendario() {
 
