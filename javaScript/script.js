@@ -69,60 +69,215 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-let map;
+function iniciarMapa() {
 
-  function iniciarMapa() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error);
-    } else {
-      alert("Tu navegador no soporta geolocalización.");
-    }
+const empresaCoords = [8.950829, -75.445915];
+const empresaNombre = "Atomy Ventas";
+const empresaDireccion = "¡Aquí nos encuentras!";
 
-    function success(position) {
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
+// Inicializar el mapa
+const map = L.map('map').setView(empresaCoords, 15);
 
-      if (map !== undefined) {
-        map.remove();
-      }
+// Agregar tiles del mapa
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
 
-      map = L.map("map").setView([lat, lon], 13);
+// Marcador de la empresa
+const empresaMarker = L.marker(empresaCoords)
+    .addTo(map)
+    .bindPopup(`
+        <b>${empresaNombre}</b><br>
+        ${empresaDireccion}<br>
+        <small>Haz clic en "Cómo Llegar" para ver la ruta</small>
+    `);
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
+// Crear el botón flotante
+const routeBtn = document.createElement('button');
+routeBtn.id = 'routeBtn';
+routeBtn.className = 'route-button';
+routeBtn.innerHTML = '<i class="bi bi-geo me-2"></i> Cómo Llegar';
+document.querySelector('#map').parentElement.appendChild(routeBtn);
 
-      // Punto de destino: ATOMY VENTAS
-      const destino = [8.950829, -75.445915];
+// Crear botón limpiar
+const clearBtn = document.createElement('button');
+clearBtn.id = 'clearBtn';
+clearBtn.className = 'route-button';
+clearBtn.innerHTML = '<i class="bi bi-x-circle me-2"></i> Limpiar';
+clearBtn.style.right = '140px'; // Posicionarlo a la izquierda del botón principal
+clearBtn.style.background = '#6c757d';
+clearBtn.style.display = 'none'; // Oculto inicialmente
+document.querySelector('#map').parentElement.appendChild(clearBtn);
 
-      // Mostrar ruta desde ubicación hasta el destino
-      L.Routing.control({
-        waypoints: [
-          L.latLng(lat, lon),      // Origen: ubicación actual del usuario
-          L.latLng(destino[0], destino[1])  // Destino
-        ],
-        language: 'es',
-        routeWhileDragging: false,
-        showAlternatives: true,
-        createMarker: function(i, wp, nWps) {
-          if (i === 0) {
-            return L.marker(wp.latLng).bindPopup("Tu ubicación").openPopup();
-          } else if (i === nWps - 1) {
-            return L.marker(wp.latLng).bindPopup("Destino: Atomy Ventas");
-          } else {
-            return L.marker(wp.latLng);
-          }
+// Variables para el control de rutas y ubicación del usuario
+let routeControl = null;
+let userMarker = null;
+let userLocation = null;
+
+// Función para mostrar mensajes (sin panel de info)
+function showMessage(message, type = 'info') {
+    console.log(`[${type.toUpperCase()}] ${message}`);
+    
+    // Mostrar mensaje como popup temporal
+    const popup = L.popup()
+        .setLatLng(empresaCoords)
+        .setContent(`<div style="text-align: center;"><strong>${message}</strong></div>`)
+        .openOn(map);
+    
+    // Cerrar popup después de 3 segundos
+    setTimeout(() => {
+        map.closePopup(popup);
+    }, 3000);
+}
+
+// Función para obtener la ubicación del usuario
+function getUserLocation() {
+    return new Promise((resolve, reject) => {
+        if (!navigator.geolocation) {
+            reject(new Error('La geolocalización no está soportada por este navegador.'));
+            return;
         }
-      }).addTo(map);
+        
+        showMessage('Obteniendo tu ubicación...', 'loading');
+        
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const coords = [position.coords.latitude, position.coords.longitude];
+                resolve(coords);
+            },
+            (error) => {
+                let errorMessage = 'No se pudo obtener tu ubicación. ';
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        errorMessage += 'Permiso denegado.';
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        errorMessage += 'Ubicación no disponible.';
+                        break;
+                    case error.TIMEOUT:
+                        errorMessage += 'Tiempo agotado.';
+                        break;
+                    default:
+                        errorMessage += 'Error desconocido.';
+                        break;
+                }
+                reject(new Error(errorMessage));
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 60000
+            }
+        );
+    });
+}
+
+// Función para mostrar la ruta
+function showRoute(startCoords, endCoords) {
+    // Eliminar ruta anterior si existe
+    if (routeControl) {
+        map.removeControl(routeControl);
+    }
+    
+    // Crear nueva ruta
+    routeControl = L.Routing.control({
+        waypoints: [
+            L.latLng(startCoords[0], startCoords[1]),
+            L.latLng(endCoords[0], endCoords[1])
+        ],
+        routeWhileDragging: false,
+        geocoder: false,
+        addWaypoints: false,
+        createMarker: function(i, waypoint, n) {
+            return null; // No crear marcadores automáticos
+        },
+        lineOptions: {
+            styles: [
+                { color: 'black', weight: 7, opacity: 0.5 },     // Borde (más grueso)
+                { color: '#007bff', weight: 4, opacity: 0.9 }    // Línea principal (más fina encima)
+            ]
+        }
+    }).addTo(map);
+    
+    // Ajustar vista para mostrar toda la ruta
+    routeControl.on('routesfound', function(e) {
+        const routes = e.routes;
+        const summary = routes[0].summary;
+        
+        showMessage(
+            `Ruta: ${(summary.totalDistance / 1000).toFixed(1)} km, ${Math.round(summary.totalTime / 60)} min`,
+            'success'
+        );
+
+        clearBtn.style.display = 'block';
+        
+        // Ajustar vista del mapa
+        map.fitBounds([startCoords, endCoords], {padding: [20, 20]});
+    });
+    
+    routeControl.on('routingerror', function(e) {
+        showMessage('Error al calcular la ruta. Inténtalo de nuevo.', 'error');
+    });
+}
+
+// Función principal para manejar el clic del botón
+async function handleRouteClick() {
+    try {
+        routeBtn.disabled = true;
+        routeBtn.textContent = '🔄 Calculando...';
+        
+        // Obtener ubicación del usuario
+        userLocation = await getUserLocation();
+        
+        // Agregar marcador del usuario
+        if (userMarker) {
+            map.removeLayer(userMarker);
+        }
+        
+        userMarker = L.marker(userLocation, {
+            icon: L.divIcon({
+                html: '<div style="background: #28a745; border: 2px solid white; border-radius: 50%; width: 20px; height: 20px;"></div>',
+                className: 'user-location-marker',
+                iconSize: [16, 16],
+                iconAnchor: [8, 8]
+            })
+        }).addTo(map).bindPopup('Tu ubicación actual');
+        
+        // Mostrar la ruta
+        showRoute(userLocation, empresaCoords);
+        
+    } catch (error) {
+        showMessage(error.message, 'error');
+    } finally {
+        routeBtn.disabled = false;
+        routeBtn.innerHTML = '<i class="bi bi-geo me-2"></i> Cómo Llegar';
     }
 
-    function error() {
-      alert("No se pudo obtener tu ubicación.");
+    clearBtn.addEventListener('click', () => {
+    if (routeControl) {
+        map.removeControl(routeControl);
+        routeControl = null;
     }
-  }
 
-  iniciarMapa();
+    if (userMarker) {
+        map.removeLayer(userMarker);
+        userMarker = null;
+    }
+
+    clearBtn.style.display = 'none'; // Ocultar el botón limpiar después de limpiar
+    map.setView(empresaCoords, 15);  // Recentrar en la empresa si quieres
+});
+
+}
+
+// Event listener para el botón
+routeBtn.addEventListener('click', handleRouteClick);
+
+// Mostrar popup inicial de la empresa
+setTimeout(() => {
+    empresaMarker.openPopup();
+}, 1000);
+}
 
   function iniciarCalendario() {
 
