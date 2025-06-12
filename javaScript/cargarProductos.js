@@ -44,100 +44,100 @@ const productos = [
     categoria: "Facial"
   },
   {
-    nombre: "Set cuidado de la piel The Fame",
-    precio: 468000,
-    imagen: "images/fame.jpg",
-    descripcion: "Limpieza profunda, hidratación, nutrición y elasticidad para tu piel.",
-    categoria: "Facial"
+    nombre: "Atomy Cepillo Dental (x1)",
+    precio: 12000,
+    imagen: "images/atomy16.jpg",
+    descripcion: "Las cerdas son suaves y flexibles con un grosor de 0,18mm y una punta de 0,03mm. Dientes y encías se sentirán frescos al remover todos los residuos y la placa.",
+    categoria: "Salud"
   },
   {
-    nombre: "Set cuidado de la piel Absolute",
-    precio: 930000,
-    imagen: "images/absolute.jpg",
-    descripcion: "Regeneración celular, hidratación profunda y efecto antienvejecimiento.",
+    nombre: "HemoHIM (X60 sobres)",
+    precio: 500000,
+    imagen: "images/imagen7.jpg",
+    descripcion: "HemoHIM es un suplemento alimenticio que ayuda a fortalecer el sistema inmunológico y mejorar la salud en general.",
+    categoria: "Salud"
+  },
+  {
+    nombre: "Mascarilla de Oro de 24K",
+    precio: 80000,
+    imagen: "images/atomy17.png",
+    descripcion: "Revitaliza tu piel cansada durante el día entregándole oro 24K para revelar una piel transformada en la mañana.",
     categoria: "Facial"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
-    descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
-    categoria: "Facial"
-  },
-  {
-    nombre: "Set cuidado de la piel Hydra Brightening",
-    precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy1.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Salud"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy2.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Moda"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy7.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Moda"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy8.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Facial"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy9.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Facial"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy10.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Facial"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy11.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Moda"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy12.png",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Facial"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy13.jfif",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Facial"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/atomy14.jfif",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Facial"
   },
   {
     nombre: "Set cuidado de la piel Hydra Brightening",
     precio: 320000,
-    imagen: "images/hydra.jpg",
+    imagen: "images/imagen6.jpg",
     descripcion: "Hidratación intensa, luminosidad y frescura para tu rostro.",
     categoria: "Moda"
   }

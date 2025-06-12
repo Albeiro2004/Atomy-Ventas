@@ -306,8 +306,8 @@
 }
 
 :root {
-    --primary-color: #a7e1f7;
-    --secondary-color: #91d3ff;
+    --primary-color: #2087c4fa;
+    --secondary-color: #38adfc;
     --accent-color: #e74c3c;
     --light-color: #ecf0f1;
     --dark-color: #1b2530;
@@ -315,8 +315,8 @@
 }
 
 .headerNosotros {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: rgb(94, 92, 92);
+    background-color: #5AB4E9;  /* Azul medio, combina perfecto con el nav actual */
+    color: #ffffff;
     text-align: center;
     padding: 20px 20px;
     width: 100%;
@@ -346,7 +346,7 @@
 .buttons-container {
     display: flex;
     gap: 70px;
-    margin: 30px 0;
+    margin: 15px 0;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -355,13 +355,12 @@
     background: linear-gradient(135deg, var(--secondary-color), rgb(91, 171, 236));
     color: rgb(56, 56, 56);
     border: none;
-    padding: 5px 8px;
+    padding: 5px 30px;
     font-size: 1.2rem;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    min-width: 200px;
     text-align: center;
     position: relative;
     overflow: hidden;

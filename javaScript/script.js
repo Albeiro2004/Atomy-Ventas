@@ -76,7 +76,7 @@ const empresaNombre = "Atomy Ventas";
 const empresaDireccion = "¡Aquí nos encuentras!";
 
 // Inicializar el mapa
-const map = L.map('map').setView(empresaCoords, 15);
+const map = L.map('map').setView(empresaCoords, 13);
 
 // Agregar tiles del mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -123,11 +123,6 @@ function showMessage(message, type = 'info') {
         .setLatLng(empresaCoords)
         .setContent(`<div style="text-align: center;"><strong>${message}</strong></div>`)
         .openOn(map);
-    
-    // Cerrar popup después de 3 segundos
-    setTimeout(() => {
-        map.closePopup(popup);
-    }, 3000);
 }
 
 // Función para obtener la ubicación del usuario
@@ -265,7 +260,7 @@ async function handleRouteClick() {
     }
 
     clearBtn.style.display = 'none'; // Ocultar el botón limpiar después de limpiar
-    map.setView(empresaCoords, 15);  // Recentrar en la empresa si quieres
+    map.setView(empresaCoords, 13);  // Recentrar en la empresa si quieres
 });
 
 }
@@ -279,9 +274,9 @@ setTimeout(() => {
 }, 1000);
 }
 
-  function iniciarCalendario() {
+function iniciarCalendario() {
 
-  let currentDate = new Date();
+let currentDate = new Date();
         
         // Eventos de ejemplo
         const events = {

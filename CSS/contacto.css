@@ -261,63 +261,97 @@
     margin-bottom: 5px;
 }
 
+.route-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.route-button:hover {
+    background: #0056b3;
+}   
+
+.route-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.leaflet-routing-container {
+    margin-top: 65px !important;
+    border-radius: 15px;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
 
-    .contacto-info{
-        align-items: stretch;
-    }
-    .contact-icon {
-        font-size: 2rem;
-    }
+.contacto-info{
+    align-items: stretch;
+}
+.contact-icon {
+    font-size: 2rem;
+}
 
-    form {
-        padding: 1.5rem;
-    }
+form {
+    padding: 1.5rem;
+}
 
-    .mapa {
-        height: 50vh;
-        margin-bottom: 20px;
-    }
-    .btn-primary {
-        width: 100%;
-    }
+.mapa {
+    height: 50vh;
+    margin-bottom: 20px;
+}
+.btn-primary {
+    width: 100%;
+}
 
-    .mapa, .formulario {
-        padding: 1rem 0;
-    }
+.mapa, .formulario {
+    padding: 1rem 0;
+}
 
-    .contacto-form{
-        width: 100%;
-        margin: 0;
-        padding: 3%;
-    }
+.contacto-form{
+    width: 100%;
+    margin: 0;
+    padding: 3%;
+}
 
-    .contact-container {
-        width: 100%;
-        margin: 0;
-        margin-top: 10px;
-        padding: 1rem 0.5rem;
-    }
+.contact-container {
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+    padding: 1rem 0.5rem;
+}
 
-    .btn-submit {
-        padding: 10px 15px;
-    }
-    
-    .contact-title {
-        font-size: 1.75rem;
-    }
+.btn-submit {
+    padding: 10px 15px;
+}
 
-    #map {
-        height: 50vh !important;
-    }
+.contact-title {
+    font-size: 1.75rem;
+}
 
-    .mapa .titulo, .con .titulo {
-        font-size: 20px;
-    }
+#map {
+    height: 50vh !important;
+}
 
-    .contacto-info {
-        margin-bottom: 0 !important;
-    }
+.mapa .titulo, .con .titulo {
+    font-size: 20px;
+}
+
+.contacto-info {
+    margin-bottom: 0 !important;
+}
+
+.leaflet-routing-container {
+    display: none;
+}
 
 }
