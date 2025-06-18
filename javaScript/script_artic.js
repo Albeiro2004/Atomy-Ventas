@@ -243,22 +243,43 @@ if (botonModal) {
   });
 }
 
-  document.querySelector('#carritoModal .btn-success')?.addEventListener('click', () => {
-    if (carrito.length === 0) {
-      alert('Tu carrito está vacío.');
-      return;
-    }
+  function enviarPedidoPorWhatsApp() {
 
-    if (confirm('¿Deseas finalizar la compra?')) {
-      alert('¡Gracias por tu compra! Tu pedido ha sido procesado.');
-      carrito = [];
-      guardarCarrito();
-      actualizarCarrito();
-      const modal = bootstrap.Modal.getInstance(document.getElementById('carritoModal'));
-      modal.hide();
-      location.reload();      
-    }
+  if (carrito.length === 0) {
+    alert('Tu carrito está vacío.');
+    return;
+  }
+
+  let mensaje = "Hola, me gustaría hacer el siguiente pedido:\n\n";
+  let total = 0;
+
+  carrito.forEach(item => {
+    mensaje += `${item.nombre} - Cantidad: ${item.cantidad} - Precio: $${item.precio.toFixed(2)}\n`;
+    total += item.precio * item.cantidad;
   });
+
+  mensaje += `\nTotal: $${total.toFixed(2)}`;
+
+  // Codifica el mensaje para la URL
+  const mensajeCodificado = encodeURIComponent(mensaje);
+
+  const numeroTelefono = '+573118898662';
+
+  window.open(`https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`, '_blank');
+
+  carrito = [];
+  guardarCarrito();
+  actualizarCarrito();
+}
+
+document.querySelector('#carritoModal .btn-success')?.addEventListener('click', () => {
+  if (confirm('¿Deseas finalizar el pedido?')) {
+    enviarPedidoPorWhatsApp();
+    const modal = bootstrap.Modal.getInstance(document.getElementById('carritoModal'));
+    modal.hide();
+  }
+});
+
 
 }
 
