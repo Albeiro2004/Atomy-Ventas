@@ -161,14 +161,14 @@ function inicializarArticulos() {
       total += item.precio * item.cantidad;
 
       const li = document.createElement('li');
-      li.className = 'list-group-item d-flex justify-content-center align-items-center';
+      li.className = 'list-group-item d-flex justify-content-center align-items-center todo-cars';
       li.innerHTML = `
-          <div class="card border-0 shadow-sm rounded-3 w-100">
+          <div class="card border-0 shadow-sm rounded-3 w-100 card-cars">
             <div class="card-body d-flex justify-content-between align-items-center">
 
               <!-- Imagen + nombre + precios -->
               <div class="d-flex align-items-center">
-                <img src="${item.img}" width="80" class="rounded me-3 border">
+                <img src="${item.img}" width="80" class="rounded me-3 border img-carro">
                 <div class="ms-4">
                   <h6 class="mb-1 fw-semibold">${item.nombre}</h6>
                   <div class="text-muted small">
@@ -180,13 +180,13 @@ function inicializarArticulos() {
 
               <!-- Controles de cantidad y eliminar -->
               <div class="text-center ms-3">
-                <div class="input-group input-group-sm mb-2" style="width: 110px;">
+                <div class="input-group input-group-sm mb-2 input-car" style="width: 110px;">
                   <button class="btn btn-outline-secondary" onclick="cambiarCantidad(${index}, -1)">–</button>
                   <input type="text" class="form-control text-center bg-white" value="${item.cantidad}" readonly>
                   <button class="btn btn-outline-secondary" onclick="cambiarCantidad(${index}, 1)">+</button>
                 </div>
                 <button class="btn btn-sm btn-outline-danger" onclick="eliminarDelCarrito(${index})">
-                  <i class="bi bi-trash"></i> Eliminar
+                  <i class="bi bi-trash"></i>
                 </button>
               </div>
 
@@ -195,8 +195,7 @@ function inicializarArticulos() {
       `;
       carritoLista.appendChild(li);
     });
-
-    carritoTotal.textContent = total.toFixed(2);
+    carritoTotal.textContent = total.toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
     carritoContador.textContent = carrito.length;
     guardarCarrito();
   }
